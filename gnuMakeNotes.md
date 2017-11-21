@@ -79,7 +79,8 @@ When the hello.o and languages.o are evaluated for the **hello:** target, the **
 
 Make supports the Bourne shell wildcards
 
-* **\*** (astricks) - match all
+* **\*** (astericks) - match all for shell commands
+* **\%** (percent) - match all - roughly equivellent to shell`s asterisk
 * **\?** (question) - match a single character
 * **\~** (tilde) - expand to user's home directory
 * **\^** (caret) - negate the pattern
@@ -92,7 +93,7 @@ Note that wildcard expansion is done by make itself when it applies to the **tar
 
 ## Predefined Variables
 * **\@** (at sign) - the target filename
-* **\%** (percent sign) - the filename element of an archive member specification
+* **\%** (percent sign) - the filename element of an archive member specification.  It can only occur once in a pattern.
 * **\$\?** (question mark) - a predefined variable that is the set of the prerequisites that are newer than the target
 * **\<** (left angle) - the filename of the first prerequisite
 * **\^** (caret) - the filenames of all the prerequisites separated by a space (duplicates removed)
@@ -113,6 +114,76 @@ hello: hello.o
         gcc -c $<
 
 ```
+
+## VPATH variable and vpath directive
+
+### VPATH variable
+When the source files are not in the directory where make is run you can specify their location with:
+
+```make
+VPATH=src
+```
+
+### vpath directive
+
+The sources files are in the src subdirectory
+
+syntax: vpath \<pattern\> \<directory\>
+
+```make
+vpath %.c src
+vpath %.h include
+```
+Tells make to look in src for c files, and inlclude for header files
+
+## Built-in pattern based target/rules
+
+There are three built-in pattern base target/rules
+
+The **\%.o**:
+
+```make
+%.o: %c
+        $(COMPILE.c) $(OUTPUT_OPTION) $<
+```
+
+The **\%.c**:
+
+```make
+%c: 
+        $(COMPILE.c) $(OUTPUT_OPTION) $<
+```
+
+The **\%:%%** - the executable file without an extension
+
+```make
+# link the object files and output to the target
+%: %.o
+        $(LINK.O) $^ -o $@
+```
+
+# Implicit Rules
+
+There are several built-in implicit rules that you can use.  They can be customized by assigning specific values to the, for example
+
+```make
+CC=gcc
+AS=nasm
+```
+
+## Examples of Implicit Rules (there are many more than listed)
+
+* **COMPILE.C** -
+* **LINK.C** -
+* **LINK.o** -
+* **LOADLIBES** - 
+* **LDLIBS** -
+* **OUTPUT_OPTIONS** -
+* **CC** - c compiler
+* **AS** - assembler
+* **RM** - rm -f
+
+
 
 # Command Line Options
 
