@@ -8,6 +8,18 @@ Notes on the GNU Make program.
 
 # Terminology and Concpts
 
+* **target** - refer to the **Very Simple Make File** section
+* **prerequisite** - refer to the **Very Simple Make File** section
+* **command** - refer to the **Very Simple Make File** section
+* **rule** - refer to the **Very Simple Make File** section
+* **all** - the standard first **target** in many Makefiles
+* **.PHONY** - used to tell make that the **target** is not a file.  The **clean** target is a typical example.  You don't want this interpreted being a file named **clean**, so to prevent this you define clean as a **.PHONY** target".  Phony targets can be used to provide a series of shell commands, such as moving and copying files, or to print informative/help messages.  Phony targets are evaluated before other targets, so in the case of a **clean** phony target it would delete all the \*.o files before the compile is run. In addition, phony targets almost alway execute, because the commands that execute are not directly tied to the target name. Example syntax:
+
+```make
+.PHONY: clean finale
+```
+Note: finale was added here as an example of having two phony targets, to show they are delimeted by spaces.
+
 # Very Simple Make File
 
 For illustration of basic concepts, start with a very basic make file
@@ -62,6 +74,17 @@ languages.o: languages.c
 
 ```
 When the hello.o and languages.o are evaluated for the **hello:** target, the **rules** associated with them are then evaluated and run first.  If these had any further dependencies they would be evaluated and run first, creating the **chain** of dependencies.  Notice that the ordering is the opposite of the order you would follow buiding each step manually, with the most general (the ultimate result) appearing first, working its way down the file to the more specific components.
+
+# Wildcard Exampansion
+
+Make supports the Bourne shell wildcards
+
+* **\*** (astricks) - match all
+* **\?** (question) - match a single character
+* **\~** (tilde) - expand to user's home directory
+* **\^** (caret) - negate the pattern
+
+Note that wildcard expansion is done by make itself when it applies to the **target** or **prerequisite** lines, where as wildcards on the **command** lines are interpretted by the shell.
 
 # Command Line Options
 
