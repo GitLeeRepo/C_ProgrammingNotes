@@ -13,12 +13,15 @@ Notes on the GNU Make program.
 For illustration of basic concepts, start with a very basic make file
 
 ```make
+# Example comment
 hello: hello.c
         gcc hello.c -o hello
 ```
 Compiles directly to the 'hello' executable without any intermediate *.o object files.
 
-**Important Note:** - gnu make requires a **tab** to be used for the indentation of the **command** (gcc here)
+**Important Note:** - gnu make requires a **tab** to be used for the indentation of the **command** (gcc here).  Anything proceeded by a **tab** will be interpretted by make as a **command**, so don't use **tabs** for anything other than commands and comments.  The **tab** character is what tells make it is a command, anything that follows is sent to the shell, including comments.
+
+Note that **#** is used to start a **comment**.  This is the same as in shell scripts, which is why comments can be sent to the shell without causing an issue.
 
 **Concepts here:**
 
@@ -62,7 +65,7 @@ When the hello.o and languages.o are evaluated for the **hello:** target, the **
 
 # Command Line Options
 
-* **-n** - print the output of the make as if it ran, but don't actually compile anything
+* **-n** - print the output of the make as if the commands executed, but don't actually execute anything.
 
 # Example Makefiles
 
