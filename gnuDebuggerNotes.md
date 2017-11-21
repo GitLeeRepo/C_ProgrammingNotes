@@ -6,7 +6,7 @@ Notes on using the gdb debugger under Linux.  It also contains information on th
 
 ## YouTube Videos
 
-* [Into to gdb](https://www.youtube.com/watch?v=xQ0ONbt-qPs)
+* [Intro to gdb](https://www.youtube.com/watch?v=xQ0ONbt-qPs)
 
 # Command Line Args
 
