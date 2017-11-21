@@ -4,6 +4,12 @@ Notes on the GNU Make program.
 
 # References
 
+## Books
+
+* [Making Projects with GNU Make](https://www.amazon.com/Managing-Projects-GNU-Make-Handbooks/dp/0596006101/ref=cm_cr_arp_d_product_top?ie=UTF8) - from O'Reilly
+
+## My Other Notes
+
 * [C_ProgrammingNotes](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/C_ProgrammingNotes.md#overview)
 
 # Terminology and Concpts
@@ -171,6 +177,16 @@ CC=gcc
 AS=nasm
 ```
 
+A list of implicit rules can be obtained from the implicit rules database by running:
+
+```bash
+make -p  # print a long list from the implicit rules database
+
+#or
+
+make -p | grep 'ruleToSearchFor' # to look for a specific rule
+```
+
 ## Examples of Implicit Rules (there are many more than listed)
 
 * **COMPILE.C** -
@@ -182,8 +198,6 @@ AS=nasm
 * **CC** - c compiler
 * **AS** - assembler
 * **RM** - rm -f
-
-
 
 # Command Line Options
 
