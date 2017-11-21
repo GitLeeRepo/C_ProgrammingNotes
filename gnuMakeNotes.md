@@ -86,6 +86,34 @@ Make supports the Bourne shell wildcards
 
 Note that wildcard expansion is done by make itself when it applies to the **target** or **prerequisite** lines, where as wildcards on the **command** lines are interpretted by the shell.
 
+# Variables
+
+* **\$\(varname\)** - specifies that variable to be expanded, whatever is in the variable will be expanded to include everything it  contains.  Curly brackets can also be used **\$\{varname\}**.  For a single character variable, the parenthesis and brackedts can be excluded.
+
+## Predefined Variables
+* **\@** (at sign) - the target filename
+* **\%** (percent sign) - the filename element of an archive member specification
+* **\$\?** (question mark) - a predefined variable that is the set of the prerequisites that are newer than the target
+* **\<** (left angle) - the filename of the first prerequisite
+* **\^** (caret) - the filenames of all the prerequisites separated by a space (duplicates removed)
+* **\+** (plus) - the filenames of all the prerequisites separated by a space (duplicates included)
+* **\*** (asterisks) - the stem portion of the target filename (the part without the extension)
+* **\$(@D)** (asterisks) - the directory portion of a filename
+* **\$(@F)** (asterisks) - the file portion of a filename
+
+Examples:
+
+```make
+# Includes all prerequisites and the target name
+hello: hello.o languages.o
+        gcc $^ -o $@
+        
+# Includes the first prerequite 
+hello: hello.o 
+        gcc -c $<
+
+```
+
 # Command Line Options
 
 * **-n** - print the output of the make as if the commands executed, but don't actually execute anything.
