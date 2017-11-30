@@ -209,7 +209,7 @@ make -p | grep 'ruleToSearchFor' # to look for a specific rule
 
 ## Multiple Executables
 
-Refer to the comment included in the makefile below for details
+Refer to the comment included in the makefile below for details, and to the output which follows
 
 ```make
 # Simple make for compiling individual C files into individual executables of the same name.
@@ -236,6 +236,18 @@ ${EXE}: $(INCFILES)
 
 clean:
 	$(RM) $(EXE)
+```
+
+**OUTPUTS:**
+
+```bash
+$ make clean
+$ make
+Info: make for: unix_socket_srv unix_socket_clnt tcp_socket_srv tcp_socket_clnt
+gcc -gdwarf -Wall    unix_socket_srv.c unix_socket.h   -o unix_socket_srv
+gcc -gdwarf -Wall    unix_socket_clnt.c unix_socket.h   -o unix_socket_clnt
+gcc -gdwarf -Wall    tcp_socket_srv.c unix_socket.h   -o tcp_socket_srv
+gcc -gdwarf -Wall    tcp_socket_clnt.c unix_socket.h   -o tcp_socket_clnt
 ```
 
 ## Using both nasm and c and creating an iso file
