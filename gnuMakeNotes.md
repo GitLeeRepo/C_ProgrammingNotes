@@ -120,7 +120,6 @@ hello: hello.o languages.o
 # Includes the first prerequite 
 hello: hello.o 
         gcc -c $<
-
 ```
 
 ## VPATH variable and vpath directive
@@ -151,14 +150,14 @@ There are three built-in pattern base target/rules
 The **\%.o**:
 
 ```make
-%.o: %c
+%.o: %.c
         $(COMPILE.c) $(OUTPUT_OPTION) $<
 ```
 
 The **\%.c**:
 
 ```make
-%c: 
+%.c: 
         $(COMPILE.c) $(OUTPUT_OPTION) $<
 ```
 
@@ -242,6 +241,7 @@ clean:
 
 ```bash
 $ make clean
+rm -f unix_socket_srv unix_socket_clnt tcp_socket_srv tcp_socket_clnt
 $ make
 Info: make for: unix_socket_srv unix_socket_clnt tcp_socket_srv tcp_socket_clnt
 gcc -gdwarf -Wall    unix_socket_srv.c unix_socket.h   -o unix_socket_srv
