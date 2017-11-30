@@ -4,6 +4,8 @@ Notes on the GNU Make program.
 
 # References
 
+* [gnuMake Docs](https://www.gnu.org/software/make/manual/html_node/index.html#SEC_Contents)
+
 ## Books
 
 * [Making Projects with GNU Make](https://www.amazon.com/Managing-Projects-GNU-Make-Handbooks/dp/0596006101/ref=cm_cr_arp_d_product_top?ie=UTF8) - from O'Reilly
