@@ -20,6 +20,8 @@ Notes on the GNU Make program.
 * **prerequisite** - refer to the **Very Simple Make File** section
 * **command** - refer to the **Very Simple Make File** section
 * **rule** - refer to the **Very Simple Make File** section
+
+* **\\** - the **backslash** is used to **continue a line** to the next line.
 * **all** - the standard first **target** in many Makefiles
 * **.PHONY** - used to tell make that the **target** is not a file.  The **clean** target is a typical example.  You don't want this interpreted being a file named **clean**, so to prevent this you define clean as a **.PHONY** target".  Phony targets can be used to provide a series of shell commands, such as moving and copying files, or to print informative/help messages.  Phony targets are evaluated before other targets, so in the case of a **clean** phony target it would delete all the \*.o files before the compile is run. In addition, phony targets almost alway execute, because the commands that execute are not directly tied to the target name. Example syntax:
 
@@ -145,7 +147,7 @@ Tells make to look in src for c files, and inlclude for header files
 
 ## Built-in pattern based target/rules
 
-There are three built-in pattern base target/rules
+There are three built-in **pattern rules**
 
 The **\%.o**:
 
@@ -178,15 +180,18 @@ CC=gcc
 AS=nasm
 ```
 
-A list of implicit rules can be obtained from the implicit rules database by running:
+A list of implicit rules can be obtained from the make database (enter **make --print-data-base** or **make -p**).  For better filtering of this file try the following:
 
 ```bash
-make -p  # print a long list from the implicit rules database
+# Display the Implicit Rules section of the make database, excluding non-rule based data sections
 
-#or
+make -p | sed -n '/# Implicit Rules/,/# Files/ p' | less
+
+#or for a specific rule you can use grep
 
 make -p | grep 'ruleToSearchFor' # to look for a specific rule
 ```
+Note the **sed** option above is useful since it only displays the **# Implicit Rules** section of this much large file.  Be aware though that the search patterns used may not work if the format of the file is different from when this was run, so it may need to be updated.  The idea is to grab all text between the first search pattern and the second search pattern.
 
 ## Examples of Implicit Rules (there are many more than listed)
 
