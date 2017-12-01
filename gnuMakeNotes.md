@@ -30,6 +30,10 @@ Notes on the GNU Make program.
 ```
 Note: finale was added here as an example of having two phony targets, to show they are delimeted by spaces.
 
+# Command Line Options
+
+* **-n** - print the output of the make as if the commands executed, but don't actually execute anything.
+
 # Very Simple Make File
 
 For illustration of basic concepts, start with a very basic make file
@@ -228,10 +232,6 @@ Note that these predefined Implicit Rules make the creation of the actual make f
 * **CC** - c compiler
 * **AS** - assembler
 * **RM** - rm -f
-
-# Command Line Options
-
-* **-n** - print the output of the make as if the commands executed, but don't actually execute anything.
 
 # Example Makefiles
 
