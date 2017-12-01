@@ -32,8 +32,8 @@ Notes on the GNU Make program.
 * **built-in rules** - are **pattern rules** and are like normal rules except the **stem** of the file (the non-suffix part) are represented by **%**.  They include **%.c** for C files, **%.o**for object files and **%** by itself for stem files (executable).  The percent sign functions much like the shell's **\*** asterisk as a wildcard match
 * **implicit rules** - are **pattern or suffix rules** found in the **rules database** that handle many common task such as compiling and linking to object files or executables with default behaviors that can be changed through changing the associated built-in variables (**CC**, **CFLAGS**, etc).  They make building make files easier by not having to explicitly specify commands and parameters.
 * **.PHONY** - used to tell make that the **target** is not a file.  The **clean** target is a typical example.  You don't want this interpreted being a file named **clean**, so to prevent this you define clean as a **.PHONY** target".  
+* **predefined variables** - those variables defined or used in the **rules database** that are used by **built-in** and **implicit** rules.  They include **CC**, **CFLAGS**, **COMPILE.c**, **LINK.c**, **LINK.o**, **RM**, **LOADLIBES**, **LDLIBS**, **OUTPUT_OPTION**, etc
 * **rules database** - access with **make -p** contains **variables** (including **automatic variables**),  **implicit rules**, **file types** (\*.c, \*.o, etc) and their associated **built-in rules**
-* **predefined variables** - those variables defined in the **rules database** that are used by **built-in** and **implicit** rules.  They include **CC**, **CFLAGS**, **COMPILE.c**, **LINK.c**, **LINK.o**, **RM**, **LOADLIBES**, **LDLIBS**, **OUTPUT_OPTION**, etc
 
 # Command Line Options
 
@@ -111,7 +111,7 @@ Note that wildcard expansion is done by make itself when it applies to the **tar
 
 * **\$\(varname\)** - specifies that variable to be expanded, whatever is in the variable will be expanded to include everything it  contains.  Curly brackets can also be used **\$\{varname\}**.  For a single character variable, the parenthesis and brackedts can be excluded.
 
-## Predefined Variables
+## Automatic Variables
 * **\@** (at sign) - the target filename
 * **\%** (percent sign) - the filename element of an archive member specification.  It can only occur once in a pattern.
 * **\$\?** (question mark) - a predefined variable that is the set of the prerequisites that are newer than the target
@@ -133,6 +133,23 @@ hello: hello.o languages.o
 hello: hello.o 
         gcc -c $<
 ```
+
+## Predefined Variables
+
+**predefined variables** - those variables defined or used in the **rules database** that are used by **built-in** and **implicit** rules.  All of these variables can be redefined in the user's make file.
+
+All the variables listed here are **used** in the **rules database**, regardless of whether they are initialized or not.  Any variable that remains uninitialized when included in a rule will be ignored.
+
+* **CC** - default: cc
+* **CFLAGS** - not pre-initialized
+* **COMPILE.c** - default: $(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+* **LINK.c** - default: $(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+* **LINK.o** - default: $(CC) $(LDFLAGS) $(TARGET_ARCH)LDFLAGS** - 
+* **LDFLAGS** - not pre-initialized
+* **RM** - default: rm -f
+* **LOADLIBES** - not pre-initialized
+* **LDLIBS** - not pre-initialized
+* **OUTPUT_OPTION** - default: -o $@
 
 ## VPATH variable and vpath directive
 
