@@ -215,7 +215,7 @@ Just a few of the many rules:
 2. The second rule builds the executable (the **%:** and **-o $@**) from the C files (placeholder **$(LINK.c)** if the prereq is newer (**$^**) and links in any **$(LOADLIBES)** and  **$(LDLIBS)** that are set.
 3. The third rule builds an object file (the **%.o:** and **-o $@**) from the C files (placeholder **$(COMPILE.c)** with the output options specified by **$(OUTPUT_OPTION)** using the filename of the first prerequisite (**$<**)
 
-Note that these predefined Implicit Rules make the creation of the actual make file much easier since you can rely on the predefined options.  A good example of this is [## Multiple Executables]() example in the Example section later in this document.
+Note that these predefined Implicit Rules make the creation of the actual make file much easier since you can rely on the predefined options.  A good example of a makefile that relies on the second rule is the [## Multiple Executables](#multiple-executables) example in the Examples section later in this document.
 
 ## Examples of Variable used in Implicit Rules (there are many more than listed)
 
