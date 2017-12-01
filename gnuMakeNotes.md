@@ -145,7 +145,7 @@ vpath %.h include
 ```
 Tells make to look in src for c files, and inlclude for header files
 
-## Built-in pattern based target/rules
+# Built-In Pattern Rules
 
 There are three built-in **pattern rules**
 
@@ -187,13 +187,37 @@ A list of implicit rules can be obtained from the make database (enter **make --
 
 make -p | sed -n '/# Implicit Rules/,/# Files/ p' | less
 
-#or for a specific rule you can use grep
+# or for a specific rule you can use grep
 
 make -p | grep 'ruleToSearchFor' # to look for a specific rule
 ```
 Note the **sed** option above is useful since it only displays the **# Implicit Rules** section of this much large file.  Be aware though that the search patterns used may not work if the format of the file is different from when this was run, so it may need to be updated.  The idea is to grab all text between the first search pattern and the second search pattern.
 
-## Examples of Implicit Rules (there are many more than listed)
+## Example of Implicit Rules in Make's Database
+
+Just a few of the many rules:
+
+```make
+%: %.o
+#  recipe to execute (built-in):
+        $(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%: %.c
+#  recipe to execute (built-in):
+        $(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+	
+%.o: %.c
+#  recipe to execute (built-in):
+        $(COMPILE.c) $(OUTPUT_OPTION) $<
+```
+
+1. The first rule builds the executable (the **%:** and **-o $@**) from the object files (placeholder **$(LINK.o)** if the prereq is newer (**$^**) and links in any **$(LOADLIBES)** and  **$(LDLIBS)** that are set.
+2. The second rule builds the executable (the **%:** and **-o $@**) from the C files (placeholder **$(LINK.c)** if the prereq is newer (**$^**) and links in any **$(LOADLIBES)** and  **$(LDLIBS)** that are set.
+3. The third rule builds an object file (the **%.o:** and **-o $@**) from the C files (placeholder **$(COMPILE.c)** with the output options specified by **$(OUTPUT_OPTION)** using the filename of the first prerequisite (**$<**)
+
+Note that these predefined Implicit Rules make the creation of the actual make file much easier since you can rely on the predefined options.  A good example of this is [## Multiple Executables]() example in the Example section later in this document.
+
+## Examples of Variable used in Implicit Rules (there are many more than listed)
 
 * **COMPILE.C** -
 * **LINK.C** -
