@@ -16,23 +16,29 @@ Notes on the GNU Make program.
 
 # Terminology and Concpts
 
+## Rules
+
 * **target** - refer to the **Very Simple Make File** section
 * **prerequisite** - refer to the **Very Simple Make File** section
 * **command** - refer to the **Very Simple Make File** section
 * **rule** - refer to the **Very Simple Make File** section
 
-* **\\** - the **backslash** is used to **continue a line** to the next line.
-* **all** - the standard first **target** in many Makefiles
-* **.PHONY** - used to tell make that the **target** is not a file.  The **clean** target is a typical example.  You don't want this interpreted being a file named **clean**, so to prevent this you define clean as a **.PHONY** target".  Phony targets can be used to provide a series of shell commands, such as moving and copying files, or to print informative/help messages.  Phony targets are evaluated before other targets, so in the case of a **clean** phony target it would delete all the \*.o files before the compile is run. In addition, phony targets almost alway execute, because the commands that execute are not directly tied to the target name. Example syntax:
+## General
 
-```make
-.PHONY: clean finale
-```
-Note: finale was added here as an example of having two phony targets, to show they are delimeted by spaces.
+* **\\** - the **backslash** is used to **continue a line** to the next line.
+* **%** - the **percent** is used in **built-in/pattern rules** much like the asterisk in shell scripts as a wildcard match.  Refer to **built-in rules**
+* **all** - the standard first **target** in many Makefiles
+* **automatic variables** - a set of built-in variables that provide access to the **target** and **prerequisites** without having to provide literal filenames.  Examples include **$@**, **$^**, etc.
+* **built-in rules** - are **pattern rules** and are like normal rules except the **stem** of the file (the non-suffix part) are represented by **%**.  They include **%.c** for C files, **%.o**for object files and **%** by itself for stem files (executable).  The percent sign functions much like the shell's **\*** asterisk as a wildcard match
+* **implicit rules** - are **pattern or suffix rules** found in the **rules database** that handle many common task such as compiling and linking to object files or executables with default behaviors that can be changed through changing the associated built-in variables (**CC**, **CFLAGS**, etc).  They make building make files easier by not having to explicitly specify commands and parameters.
+* **.PHONY** - used to tell make that the **target** is not a file.  The **clean** target is a typical example.  You don't want this interpreted being a file named **clean**, so to prevent this you define clean as a **.PHONY** target".  
+* **rules database** - access with **make -p** contains **variables** (including **automatic variables**),  **implicit rules**, **file types** (\*.c, \*.o, etc) and their associated **built-in rules**
+* **predefined variables** - those variables defined in the **rules database** that are used by **built-in** and **implicit** rules.  They include **CC**, **CFLAGS**, **COMPILE.c**, **LINK.c**, **LINK.o**, **RM**, **LOADLIBES**, **LDLIBS**, **OUTPUT_OPTION**, etc
 
 # Command Line Options
 
 * **-n** - print the output of the make as if the commands executed, but don't actually execute anything.
+* **-p** or **--print-data-base** - print the make **database** which contains **variables** (including **automatic variables**),  **Implicit Rules**, **Files Types** (\*.c, \*.o, etc) and their associated **Built-In Rules**
 
 # Very Simple Make File
 
@@ -232,6 +238,15 @@ Note that these predefined Implicit Rules make the creation of the actual make f
 * **CC** - c compiler
 * **AS** - assembler
 * **RM** - rm -f
+
+# .PHONY
+
+* **.PHONY**  is used to tell make that the **target** is not a file.  The **clean** target is a typical example.  You don't want this interpreted being a file named **clean**, so to prevent this you define clean as a **.PHONY** target".  Phony targets can be used to provide a series of shell commands, such as moving and copying files, or to print informative/help messages.  Phony targets are evaluated before other targets, so in the case of a **clean** phony target it would delete all the \*.o files before the compile is run. In addition, phony targets almost alway execute, because the commands that execute are not directly tied to the target name. Example syntax:
+
+```make
+.PHONY: clean finale
+```
+Note: finale was added here as an example of having two phony targets, to show they are delimeted by spaces.
 
 # Example Makefiles
 
