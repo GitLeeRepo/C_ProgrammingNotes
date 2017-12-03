@@ -14,4 +14,9 @@ This repository also contain information on the [gcc compiler](https://github.co
 * [LinuxSysProgNotes](https://github.com/GitLeeRepo/LinuxSysProgNotes/blob/master/LinuxSysProgNotes)
 * [LinuxKernelNotes](https://github.com/GitLeeRepo/LinuxKernelNotes)
 
+## YouTube Videos
+
+* [C Programming in Linux Series](https://www.youtube.com/watch?v=CKNjXvMB0MY&list=PLypxmOPCOkHXbJhUgjRaV2pD9MJkIArhg) - approx 100 videos on a wide range of C and Linux System Programming.
+
+
 # TDB - Initial stages of creation
