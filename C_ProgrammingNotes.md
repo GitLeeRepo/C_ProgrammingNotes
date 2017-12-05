@@ -11,6 +11,8 @@ This repository also contain information on the [gcc compiler](https://github.co
 
 ## My Other Notes
 
+* [Data Structures](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/DataStructuresNotes.md#overview)
+* [AlgorithmNotes](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/AlgorithmNotes.md#overview)
 * [gnuGccNotes](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/gnuGccNotes.md#overview)
 * [GnuMakeNotes](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/GnuMakeNotes.md#overview)
 * [gdb debugger](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/gnuDebuggerNotes.md#overview)
@@ -120,8 +122,8 @@ TDB - Placeholder
 
 # Data Structures
 
-TDB - Placeholder
+* [Data Structures](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/DataStructuresNotes.md#overview)
 
-# Algorithims
+# Algorithms
 
-TDB - Placeholder
+* [AlgorithmNotes](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/AlgorithmNotes.md#overview)
