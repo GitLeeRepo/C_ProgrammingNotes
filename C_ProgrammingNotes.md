@@ -22,13 +22,77 @@ This repository also contain information on the [gcc compiler](https://github.co
 * [C Programming in Linux Series](https://www.youtube.com/watch?v=CKNjXvMB0MY&list=PLypxmOPCOkHXbJhUgjRaV2pD9MJkIArhg) - approx 100 videos on a wide range of C and Linux System Programming.
 
 
-# TDB - Initial stages of creation
+# Fundemental Data Types
 
-# Data Types
+TDB - Placeholder
 
 ## Data Type Limits
 
 * [Datat Type Limits](https://en.wikibooks.org/wiki/C_Programming/limits.h)
+
+## Type Conversions
+
+TDB - Placeholder
+
+# Character Strings
+
+TDB - Placeholder
+
+## Printf Format Strings
+
+TDB - Placeholder
+
+# Operators and Expressions
+
+TDB - Placeholder
+
+# Control Statements
+
+TDB - Placeholder
+
+# Input and Output
+
+TDB - Placeholder
+
+## Character Input and Output
+
+TDB - Placeholder
+
+## String and Text Input and Output
+
+TDB - Placeholder
+
+### Input Validation
+
+TDB - Placeholder
+
+# Loops
+
+TDB - Placeholder
+
+# Arrays and Pointers
+
+TDB - Placeholder
+
+## Arrays
+
+TDB - Placeholder
+
+## Pointers
+
+TDB - Placeholder
+
+# Structures
+
+TDB - Placeholder
+
+# Functions
+
+TDB - Placeholder
+
+# Memory and Memory Allocation
+
+TDB - Placeholder
 
 # Static Data Types and Functions
 
@@ -37,7 +101,27 @@ The word **static** has different meanings depending on whether you are deailing
 ## Global Static
 
 Within a module (a single C file), delcaring a variable to be **global** and **static**, means that variable is global to the module, but it is not visible outside the module.  **Non-static global variables** are accessible to other modules through the **extern** declarations and the **linker** resoving these references.
- 
+
 ## Local Static
 
 Static local variables (declared within functions) and static functions remain active for the life time of the application.  The static variables are defined in the data section of memory rather than on the stack, so they retain their values from one call to the next. 
+
+# File Input and Output
+
+TDB - Placeholder
+
+# Preprocessor
+
+TDB - Placeholder
+
+# Mutliple Modules
+
+TDB - Placeholder
+
+# Data Structures
+
+TDB - Placeholder
+
+# Algorithims
+
+TDB - Placeholder
