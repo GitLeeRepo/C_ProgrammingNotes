@@ -14,8 +14,8 @@ This repository also contain information on the [gcc compiler](https://github.co
 * [gnuGccNotes](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/gnuGccNotes.md#overview)
 * [GnuMakeNotes](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/GnuMakeNotes.md#overview)
 * [gdb debugger](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/gnuDebuggerNotes.md#overview)
-* [LinuxSysProgNotes](https://github.com/GitLeeRepo/LinuxSysProgNotes/blob/master/LinuxSysProgNotes)
-* [LinuxKernelNotes](https://github.com/GitLeeRepo/LinuxKernelNotes)
+* [LinuxSysProgNotes](https://github.com/GitLeeRepo/LinuxSysProgNotes/blob/master/LinuxSysProgNotes) - C related Linux System Program Notes.
+* [LinuxKernelNotes](https://github.com/GitLeeRepo/LinuxKernelNotes) - C related Linux Kernel and Module programming notes.
 
 ## YouTube Videos
 
