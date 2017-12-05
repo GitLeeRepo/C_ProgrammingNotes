@@ -26,7 +26,7 @@ This repository also contain information on the [gcc compiler](https://github.co
 
 # Fundemental Data Types
 
-TDB - Placeholder
+TOOD - Placeholder
 
 ## Data Type Limits
 
@@ -34,67 +34,67 @@ TDB - Placeholder
 
 ## Type Conversions
 
-TDB - Placeholder
+TOOD - Placeholder
 
 # Character Strings
 
-TDB - Placeholder
+TOOD - Placeholder
 
 ## Printf Format Strings
 
-TDB - Placeholder
+TOOD - Placeholder
 
 # Operators and Expressions
 
-TDB - Placeholder
+TOOD - Placeholder
 
 # Control Statements
 
-TDB - Placeholder
+TOOD - Placeholder
 
 # Input and Output
 
-TDB - Placeholder
+TOOD - Placeholder
 
 ## Character Input and Output
 
-TDB - Placeholder
+TOOD - Placeholder
 
 ## String and Text Input and Output
 
-TDB - Placeholder
+TOOD - Placeholder
 
 ### Input Validation
 
-TDB - Placeholder
+TOOD - Placeholder
 
 # Loops
 
-TDB - Placeholder
+TOOD - Placeholder
 
 # Arrays and Pointers
 
-TDB - Placeholder
+TOOD - Placeholder
 
 ## Arrays
 
-TDB - Placeholder
+TOOD - Placeholder
 
 ## Pointers
 
-TDB - Placeholder
+TOOD - Placeholder
 
 # Structures
 
-TDB - Placeholder
+TOOD - Placeholder
 
 # Functions
 
-TDB - Placeholder
+TOOD - Placeholder
 
 # Memory and Memory Allocation
 
-TDB - Placeholder
+TOOD - Placeholder
 
 # Static Data Types and Functions
 
@@ -110,15 +110,17 @@ Static local variables (declared within functions) and static functions remain a
 
 # File Input and Output
 
-TDB - Placeholder
+Refer also to: * [LinuxSysProgNotes](https://github.com/GitLeeRepo/LinuxSysProgNotes/blob/master/LinuxSysProgNotes) - specifically the file I/O topics.
+
+TOOD - Placeholder
 
 # Preprocessor
 
-TDB - Placeholder
+TOOD - Placeholder
 
 # Mutliple Modules
 
-TDB - Placeholder
+TOOD - Placeholder
 
 # Data Structures
 
