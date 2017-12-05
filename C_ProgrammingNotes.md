@@ -6,6 +6,9 @@ This repository also contain information on the [gcc compiler](https://github.co
 
 # References
 
+* [Datat Type Limits](https://en.wikibooks.org/wiki/C_Programming/limits.h)
+
+
 ## My Other Notes
 
 * [gnuGccNotes](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/gnuGccNotes.md#overview)
@@ -20,3 +23,21 @@ This repository also contain information on the [gcc compiler](https://github.co
 
 
 # TDB - Initial stages of creation
+
+# Data Types
+
+## Data Type Limits
+
+* [Datat Type Limits](https://en.wikibooks.org/wiki/C_Programming/limits.h)
+
+# Static Data Types and Functions
+
+The word **static** has different meanings depending on whether you are deailing with **global static variables**, which effect the **scope of the variable** and **local static variables**, which effect the **lifetime of the variable**.
+
+## Global Static
+
+Within a module (a single C file), delcaring a variable to be **global** and **static**, means that variable is global to the module, but it is not visible outside the module.  **Non-static global variables** are accessible to other modules through the **extern** declarations and the **linker** resoving these references.
+ 
+## Local Static
+
+Static local variables (declared within functions) and static functions remain active for the life time of the application.  The static variables are defined in the data section of memory rather than on the stack, so they retain their values from one call to the next. 
