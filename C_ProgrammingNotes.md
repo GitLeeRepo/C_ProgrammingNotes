@@ -26,14 +26,14 @@ This repository also contain information on the [gcc compiler](https://github.co
 
 # Fundemental Data Types
 
-* **char** / **unsigned char** - 1 byte / 8 bits on 32/64 bit Linux
-* **short** / **unsigned short** -  2 bytes / 16 bits on 32/64 bit Linux
-* **int** / **unsigned int** - 4 bytes / 32 bits on 32/64 bit Linux
-* **long** / **unsigned long** - 8 bytes / 64 bits on 64 bit Linux; same as int on 32 bit Linux
-* **long long** / **unsigned long long** - 8 bytes / 64 bits on 32/64 bit Linux
-* **float** - 4 bytes / 32 bits (6 signficant digits)
-* **double** -  8 bytes / 64 bits (15 significant digits)
-* **long double** - 16 bytes / 128 bits (18 significant digits)
+* **char** / **unsigned char** - 1 byte/8 bits on 32/64 bit Linux
+* **short** / **unsigned short** -  2 bytes/16 bits on 32/64 bit Linux
+* **int** / **unsigned int** - 4 bytes/32 bits on 32/64 bit Linux
+* **long** / **unsigned long** - 8 bytes/64 bits on 64 bit Linux; same as int on 32 bit Linux
+* **long long** / **unsigned long long** - 8 bytes/64 bits on 32/64 bit Linux
+* **float** - 4 bytes/32 bits (6 signficant digits)
+* **double** -  8 bytes/64 bits (15 significant digits)
+* **long double** - 16 bytes/128 bits (18 significant digits)
 
 ## Data Type Limits
 
