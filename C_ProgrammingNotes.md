@@ -102,8 +102,8 @@ For the most part you can treat a string defined with character array notation *
    // the proper way to assign/change the text of a character array is to use the strcpy() function
    strcpy(str1, "Test char array");
    
-   // note: you don't want to use strcpy() on a string pointer, unless you have already allocated memory for it
-   // otherwise you will corrupt memory
+   // note: you don't want to use strcpy() on a string pointer, unless you have already 
+   // allocated memory for it, otherwise you will corrupt memory
    strcpy(str2, "Test Pointer"); // not ok when str2 has not been allocated adequate memory
    // but this is ok
    str2 = malloc(20);
