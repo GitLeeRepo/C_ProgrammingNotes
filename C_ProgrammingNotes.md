@@ -51,6 +51,65 @@ TOOD - Placeholder
 
 # Character Strings
 
+There are not any predefined string types in C, instead C uses a **null terminated** (**\\0**) character array, to store string data.  String literals are placed in **double quotes**, whereas a character data type stores a single character using a **single quoted** character.
+
+## Strings vs Characters
+
+A single character string such as **"A"** is not the same as a character **'A'**.  The character occupies one byte of memory, where as the single character string occupies two bytes, one for the character itself, and one for the **null character**.
+
+## String Character array Size vs String Length**
+
+A string has both a size allocated in memory and a string length, and they are not the same things.  The size of the strings character array in memory can be obtained with the **sizeof** operator, whereas its length can be obtained with the **strlen** function.  For example:
+
+```c
+char name[40] = "Bill Smith";
+
+// prints: Bill Smith occupies 40 bytes of memory and is 10 characters long
+printf("%s occupies %d bytes of memory and is %d characters long\n", name, sizeof name, strlen(name);
+```
+
+## String Arrays vs String Pointers
+
+For the most part you can treat a string defined with character array notation **char name\[40\] = "Hello, World!";**, the same as **char \*msg = "Hello, World!";**, but there are differences as shown in this example:
+
+```c
+   // note that in the array notation the string address is a constant, in the pointer notation it is a variable
+   char str1[20];  // alocates 20 bytes of memory for the string
+   char *str2; // doesn't allocate any memory, it must be allocates or the pointer must point to an already allocated string
+   char msg1[20] = "Hello, World";  // allocates 20 bytes of memory
+   char *msg2 = "Hello, World!"; // allocates 14 bytes of memory (the characters plus the null termination)
+   char msg3[] = "Hello, World!"; // allocates 14 bytes like the pointer example, but it is still treated as a character array
+   
+   // legal
+   msg2 = msg1;  // msg2 now points to the same address as msg1
+   
+   // illegal
+   msg1 = msg2;  // illegal because msg1's address is a constant in array notation
+   
+   // increment legal - msg2 would both become and print "ello, World!"
+   puts(msg2++);
+   
+   // Illegal
+   puts(msg1++);  // can't increment a constant (array notation)
+   // although this is legal
+   puts(msg1+1) // prints "ello, World!", but msg1 remains unchanged and still contains "Hello, World!"
+   
+   // Legal
+   str2 = "Test pointer"; // the string literal is allocated memory and msg2 points to it
+   
+   // Illegal
+   str1 = "Test char array"; // can't change where msg1 points to
+   // the proper way to assign/change the text of a character array is to use the strcpy() function
+   strcpy(str1, "Test char array");
+   
+   // note: you don't want to use strcpy() on a string pointer, unless you have already allocated memory for it
+   // otherwise you will corrupt memory
+   strcpy(str2, "Test Pointer"); // not ok when str2 has not been allocated adequate memory
+   // but this is ok
+   str2 = malloc(20);
+   strcpy(str2, "Test Pointer");
+```
+
 ## String Standard Input Functions
 
 * **scanf()** - in general it is used to read a single word at a time from standard input, with each **%s** in the format string reading up to the first newline.
