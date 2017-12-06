@@ -42,20 +42,35 @@ TOOD - Placeholder
 
 ## Printf Format Strings
 
-Format   | Examples                 | Description                         | Footnotes
----------|--------------------------|-------------------------------------|-----------
-d        | "%d - %6d - %05d"        | print signed integer                | 1, 2
-du       | "%du - %6du - %06du"     | print unsigned integer              | 1, 2
-ld       | "%ld - %9ld - %09ld"     | print signed long                   | 1, 2
-lu       | "%lu - %9lu - %09lu"     | print unsigned long                 | 1, 2
-lld      | "%lld - %9lld - %09lld"  | print signed long long              | 1, 2
-llu      | "%llu - %9llu - %09llu"  | print unsigned long long            | 1, 2
-h        | "%d - %6d - %05d"        | print signed integer                | 1, 2
-du       | "%du - %6du - %06du"     | print unsigned integer              | 1, 2
+Format   | Examples                 | Description                               | Footnotes
+---------|--------------------------|-------------------------------------------|-----------
+d        | "%d - %6d - %05d"        | print signed integer                      | 1, 2
+u        | "%du - %6du - %06du"     | print unsigned integer                    | 1, 2
+ld       | "%ld - %9ld - %09ld"     | print signed long                         | 1, 2
+lu       | "%lu - %9lu - %09lu"     | print unsigned long                       | 1, 2
+lld      | "%lld - %9lld - %09lld"  | print signed long long                    | 1, 2
+llu      | "%llu - %9llu - %09llu"  | print unsigned long long                  | 1, 2
+hd       | "%hd - %6hd - %05hd"     | print signed short                        | 1, 2
+hu       | "%hu - %6hu - %06hu"     | print unsigned short                      | 1, 2
+x, X     | "%x - %6x - %09x"        | print hexadecimal unsigned integer        | 1, 2, 4
+lx, lX   | "%lx - %9lx - %09lx"     | print hexadecimal unsigned long           | 1, 2, 4
+hx, hX   | "%hx - %6hx - %09hx"     | print hexadecimal unsigned short          | 1, 2, 4
+p        | "%p - %9p - %09p"        | print pointer (six byte address)          | 1, 2
+f        | "%6.3f; %02.14f"         | print float/double                        | 2, 3
+g. G     | "%6.3f; %02.14f"         | print float/dbl (either dec or exp)       | 2, 3, 5
+e, E     | "%9e - %9E"              | print float/double in exponential format  | 2, 3, 6
+c        | "%c - %5c"               | print a single character                  | 1, 7
+s        | "%s - %10s - %-10s       | print a character string                  | 1, 8
 
-
-1. Number proceeding the type placeholder specifies the output lenghth
+1. Number proceeding the type placeholder specifies the output length
 2. Leading zero as in "%05d" or %09lu" will print leading zeros
+3. For floats the decimal number preceeding the type specfies how many digits before and after the decimal point
+4. the x/X prints the number as an exponent.  The lower case 'x' prints a lower case letter 'x' in the hex number, and an upper case 'X' prints and uppercase letter 'X' in the hex number.
+5. the g/G types will either print as a decimal number or as an exponent depending on the size.  The lower case 'g' prints a lower case letter 'e' in the exponent, and an upper case 'G' prints and uppercase letter 'E' in the exponent.
+6. the e/E prints the number as an exponent.  The lower case 'e' prints a lower case letter 'e' in the exponent, and an upper case 'E' prints and uppercase letter 'E' in the exponent.
+7. Be aware that for character formats it will try to print the ASCII equivellent to the numeric value, many of which are non-printable characters.  This is intended for printable ASCII characters (A-Z, a-z, 0-9, punctuation, etc.)
+8. This character string example shows a negative **-10s**, which will cause the string to be left justified, rather than the default right justified.
+
 
 ## Printf Format String Examples
 
