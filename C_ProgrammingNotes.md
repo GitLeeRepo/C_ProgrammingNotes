@@ -90,7 +90,7 @@ TOOD - Placeholder
   // for "William Smith", it returns "William" to name and 7 for numCharsRead
   // since it reads up to the **%20s** or newline, whichever comes first
   numCharsRead = scanf("%20s", name);
-```
+  ```
 
 ## Printf Format Strings
 
