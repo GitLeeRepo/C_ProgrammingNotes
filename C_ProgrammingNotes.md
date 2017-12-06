@@ -192,6 +192,26 @@ hex double 1:  0x1.d6f34540ca458p+26;      0x1.d6f34540ca458p+26
 hex double 1:  0X1.D6F34540CA458P+26;      0X1.D6F34540CA458P+26
 ```
 
+### Character String Format
+
+```c
+    char *strEx1 = "Hello, World!";
+    char *strEx2 = "How goes things?";
+
+    printf("strings 1 & 2    (\"%%s  %%s\"): %s  %s\n", strEx1, strEx2);
+    printf("strings 1 & 2  (\"%%20s  %%s\"): %20s  %s\n", strEx1, strEx2);
+    printf("strings 1 & 2 (\"%%-20s  %%s\"): %-20s  %s\n", strEx1, strEx2);
+```
+
+**Output:**
+
+```bash
+Character String:
+strings 1 & 2    ("%s  %s"): Hello, World!  How goes things?
+strings 1 & 2  ("%20s  %s"):        Hello, World!  How goes things?
+strings 1 & 2 ("%-20s  %s"): Hello, World!         How goes things?
+```
+
 # Operators and Expressions
 
 TOOD - Placeholder
