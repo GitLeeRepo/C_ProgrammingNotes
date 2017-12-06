@@ -57,6 +57,79 @@ du       | "%du - %6du - %06du"     | print unsigned integer              | 1, 2
 1. Number proceeding the type placeholder specifies the output lenghth
 2. Leading zero as in "%05d" or %09lu" will print leading zeros
 
+## Printf Format String Examples
+
+### Integer Formats
+
+```c
+    char charEx1 = SCHAR_MAX;
+    char charEx2 = SCHAR_MIN;
+    unsigned char ucharEx1 = UCHAR_MAX;
+    short shortEx1 = SHRT_MAX;
+    short shortEx2 = SHRT_MIN;
+    unsigned short ushortEx1 = USHRT_MAX;
+    int intEx1 = INT_MAX;
+    int intEx2 = INT_MIN;
+    unsigned int uintEx1 = UINT_MAX;
+    long longEx1 = LONG_MAX;
+    long longEx2 = LONG_MIN;
+    unsigned long ulongEx1 = ULONG_MAX;
+
+    printf("            char 1: %20hd; %020hd\n", (short) charEx1, (short) charEx1);
+    printf("            char 2: %20hd; %020hd\n", (short) charEx2, (short) charEx2);
+    printf("   unsigned char 1: %20hu; %020hu\n", (short) ucharEx1, (short) ucharEx1);
+
+    printf("hex unsign short 1: %20hx; %020hx\n", ushortEx1, ushortEx1);
+    printf("hex unsign short 2: %20hX; %020hX\n", ushortEx1, ushortEx1);
+
+    printf("           short 1: %20hd; %020hd\n", shortEx1, shortEx1);
+    printf("           short 2: %20hd; %020hd\n", shortEx2, shortEx2);
+    printf("  unsigned short 1: %20hu; %020hu\n", ushortEx1, ushortEx1);
+
+    printf("hex unsigned int 1: %20x; %020x\n", uintEx1, uintEx1);
+    printf("hex unsigned int 2: %20X; %020X\n", uintEx1, uintEx1);
+
+    printf("         integer 1: %20d; %020d\n", intEx1, intEx1);
+    printf("         integer 2: %20d; %020d\n", intEx2, intEx2);
+    printf("unsigned integer 1: %20u; %020u\n", uintEx1, uintEx1);
+
+    printf(" hex unsign long 1: %20lx; %020lx\n", ulongEx1, ulongEx1);
+    printf(" hex unsign long 2: %20lX; %020lX\n", ulongEx1, ulongEx1);
+
+    printf("            long 1: %20ld; %020ld\n", longEx1, longEx1);
+    printf("            long 2: %20ld; %020ld\n", longEx2, longEx2);
+    printf("   unsigned long 1: %20lu; %020lu\n", ulongEx1, ulongEx1);
+
+    printf("\n         pointer to char 1: %10p (six byte address)\n", &charEx1);
+    printf("pointer to unsigned long 1: %10p (six byte address)\n\n", &ulongEx1);
+```
+
+**Output:***
+
+```bash
+Integer formats (with max/min values):
+            char 1:                  127; 00000000000000000127
+            char 2:                 -128; -0000000000000000128
+   unsigned char 1:                  255; 00000000000000000255
+hex unsign short 1:                 ffff; 0000000000000000ffff
+hex unsign short 2:                 FFFF; 0000000000000000FFFF
+           short 1:                32767; 00000000000000032767
+           short 2:               -32768; -0000000000000032768
+  unsigned short 1:                65535; 00000000000000065535
+hex unsigned int 1:             ffffffff; 000000000000ffffffff
+hex unsigned int 2:             FFFFFFFF; 000000000000FFFFFFFF
+         integer 1:           2147483647; 00000000002147483647
+         integer 2:          -2147483648; -0000000002147483648
+unsigned integer 1:           4294967295; 00000000004294967295
+ hex unsign long 1:     ffffffffffffffff; 0000ffffffffffffffff
+ hex unsign long 2:     FFFFFFFFFFFFFFFF; 0000FFFFFFFFFFFFFFFF
+            long 1:  9223372036854775807; 09223372036854775807
+            long 2: -9223372036854775808; -9223372036854775808
+   unsigned long 1: 18446744073709551615; 18446744073709551615
+
+         pointer to char 1: 0x7ffd09f4436b (six byte address)
+pointer to unsigned long 1: 0x7ffd09f44380 (six byte address)
+```
 
 # Operators and Expressions
 
