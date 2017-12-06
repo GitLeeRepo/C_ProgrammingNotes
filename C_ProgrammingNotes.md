@@ -73,12 +73,14 @@ printf("%s occupies %d bytes of memory and is %d characters long\n", name, sizeo
 For the most part you can treat a string defined with character array notation **char name\[40\] = "Hello, World!";**, the same as **char \*msg = "Hello, World!";**, but there are differences as shown in this example:
 
 ```c
-   // note that in the array notation the string address is a constant, in the pointer notation it is a variable
+   // note: in array notation the string address is a constant, in pointer notation it is a variable
    char str1[20];  // alocates 20 bytes of memory for the string
-   char *str2; // doesn't allocate any memory, it must be allocates or the pointer must point to an already allocated string
-   char msg1[20] = "Hello, World";  // allocates 20 bytes of memory
-   char *msg2 = "Hello, World!"; // allocates 14 bytes of memory (the characters plus the null termination)
-   char msg3[] = "Hello, World!"; // allocates 14 bytes like the pointer example, but it is still treated as a character array
+   char *str2; // doesn't allocate any memory, it must be allocates or the pointer must point
+               // to an already allocated string
+   char msg1[20] = "Hello, World"; // allocates 20 bytes of memory
+   char *msg2 = "Hello, World!";   // allocates 14 bytes of memory (the characters plus the null termination)
+   char msg3[] = "Hello, World!";  // allocates 14 bytes like the pointer example, but it is still treated 
+                                   // as a character array
    
    // legal
    msg2 = msg1;  // msg2 now points to the same address as msg1
