@@ -341,6 +341,25 @@ strings 1 & 2  ("%20s  %s"):        Hello, World!  How goes things?
 strings 1 & 2 ("%-20s  %s"): Hello, World!         How goes things?
 ```
 
+## String Functions
+
+* **fgets(str, size, fileStream)** - get string from a FILE \*stream
+* **fprintf(fileStream, fmtstr, arg1,...)** - get formatted string from a FILE \*stream
+* **fputs(str, fileStream)** - write a string to a FILE \*stream
+* **gets(str)** - get a string from standard input
+* **printf("fmtstr, arg1,...)** - print a formatted string to standard output
+* **puts(str)** - print an unformatted string to standard output
+* **scanf("fmtstr", arg1,...)** - get a format string (word(s)) from standard input
+* **sprintf(dest, fmtstr, arg1,...)** - write a formated string to a memory location (destination string)
+* **strcat(str1, str2)** - string concatenation
+* **strchr(str, char)** - returns a pointer to the first location of char in str
+* **strcmp(str1, str2)** - compare two strings (returns 0 if equal, positive if str1 is greater, negative if str1 is less)
+* **strcpy(src, dest)** - copy destination string to source string (source needs to be big enough)
+* **strlen(str)** - string length
+* **strncmp(str1, str2, size)** - same as **strcmp()** but limits comparison to the number of size characters
+* **strncpy(src, dest, size)**  - copy destination string to source string using the specified size
+* **strstr(str1, str2)** - returns a pointer to the first location where str2 occurs in str1
+
 # Operators and Expressions
 
 TOOD - Placeholder
