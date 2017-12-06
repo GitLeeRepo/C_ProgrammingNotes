@@ -91,17 +91,19 @@ For the most part you can treat a string defined with character array notation *
    // increment legal - msg2 would both become and print "ello, World!"
    puts(msg2++);
    
-   // Illegal
+   // illegal
    puts(msg1++);  // can't increment a constant (array notation)
    // although this is legal
    puts(msg1+1) // prints "ello, World!", but msg1 remains unchanged and still contains "Hello, World!"
    
-   // Legal
+   // legal
    str2 = "Test pointer"; // the string literal is allocated memory and msg2 points to it
    
-   // Illegal
+   // illegal
    str1 = "Test char array"; // can't change where msg1 points to
    // the proper way to assign/change the text of a character array is to use the strcpy() function
+   // which doesn't change where str1 points, it changes the current location's contents, just don't
+   // exceed the buffer size, you can use **strncpy()** to specify the number of characters to copy
    strcpy(str1, "Test char array");
    
    // note: you don't want to use strcpy() on a string pointer, unless you have already 
