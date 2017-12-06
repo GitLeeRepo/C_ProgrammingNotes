@@ -31,9 +31,15 @@ This repository also contain information on the [gcc compiler](https://github.co
 * **int** / **unsigned int** - 4 bytes/32 bits on 32/64 bit Linux
 * **long** / **unsigned long** - 8 bytes/64 bits on 64 bit Linux; same as int on 32 bit Linux
 * **long long** / **unsigned long long** - 8 bytes/64 bits on 32/64 bit Linux
-* **float** - 4 bytes/32 bits (6 signficant digits)
-* **double** -  8 bytes/64 bits (15 significant digits)
-* **long double** - 16 bytes/128 bits (18 significant digits)
+* **float** - 4 bytes/32 bits (6 signficant digits with a range (exponent) 10^-37 to 10^37). 23 bits used for signficant digits (**mantissa**), 8 for exponent, and 1 bit for the sign.
+* **double** -  8 bytes/64 bits (15 significant digits with a range (exponent) of 10^-308 o 10^308). 52 bits used for significant digits (**mantissa**), 11 for the exponenent, and 1 bit for the sign. 
+* **long double** - 16 bytes/128(80) bits (18 significant digits with **80 bit extended precission**).  With **gcc on x86** it is **80bit extended precision** with the full 128bit available with the **\_\_float128** data type.  For **80 bit extended** it is 63 bits used for significant digits (**mantisa**), 15 bits for the exponent, 1 bit for the integer part and 1 bit for the sign. It has a range of 10^-4951 to 10^4932
+
+## Floating Point References
+
+* [Floating Point Wikipedia](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
+* [Extended Precision Format Wikipedia](https://en.wikipedia.org/wiki/Extended_precision#x86_Extended_Precision_Format)
+* [Long Double Wikipedia](https://en.wikipedia.org/wiki/Long_double)
 
 ## Data Type Limits
 
