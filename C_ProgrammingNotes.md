@@ -131,6 +131,52 @@ unsigned integer 1:           4294967295; 00000000004294967295
 pointer to unsigned long 1: 0x7ffd09f44380 (six byte address)
 ```
 
+### Float Formats
+
+```c
+    float floatEx1 = 12345.6789;
+    double doubleEx1 = 123456789.0123456789;
+    double doubleEx2 = 0.000000123456789;
+
+    printf("    float 1: %23.4f; %26.10f\n", floatEx1, floatEx1);
+    printf("   double 1: %23.10f; %26.14f\n", doubleEx1, doubleEx1);
+    printf("   double 2: %23.15f; %26.20f\n\n", doubleEx2, doubleEx2);
+
+    printf(" g double 1: %23.10g; %26.14g\n", doubleEx1, doubleEx1);
+    printf(" G double 1: %23.10G; %26.14G\n", doubleEx1, doubleEx1);
+    printf(" g double 2: %23.18g; %26.20g\n", doubleEx2, doubleEx2);
+    printf(" G double 2: %23.18G; %26.20G\n", doubleEx2, doubleEx2);
+
+    printf(" e double 1:  %22.10e; %26.14e\n", doubleEx1, doubleEx1);
+    printf(" E double 1:  %22.10e; %26.14E\n", doubleEx1, doubleEx1);
+    printf(" e double 2: %23.11e; %25.20e\n", doubleEx2, doubleEx2);
+    printf(" E double 2: %23.11E; %25.20E\n\n", doubleEx2, doubleEx2);
+
+    printf("hex double 1: %22a;  %25a\n", doubleEx1, doubleEx1);
+    printf("hex double 1: %22A;  %25A\n", doubleEx1, doubleEx1);
+```
+
+**Output:**
+
+```bash
+Float Formats (col 1 num assiged width, col 2 extra width):
+    float 1:              12345.6787;           12345.6787109375
+   double 1:    123456789.0123456717;   123456789.01234567165375
+   double 2:       0.000000123456789;     0.00000012345678900000
+
+ g double 1:               123456789;            123456789.01235
+ G double 1:               123456789;            123456789.01235
+ g double 2: 1.23456788999999994e-07;  1.2345678899999999393e-07
+ G double 2: 1.23456788999999994E-07;  1.2345678899999999393E-07
+ e double 1:        1.2345678901e+08;       1.23456789012346e+08
+ E double 1:        1.2345678901e+08;       1.23456789012346E+08
+ e double 2:       1.23456789000e-07; 1.23456788999999993933e-07
+ E double 2:       1.23456789000E-07; 1.23456788999999993933E-07
+
+hex double 1:  0x1.d6f34540ca458p+26;      0x1.d6f34540ca458p+26
+hex double 1:  0X1.D6F34540CA458P+26;      0X1.D6F34540CA458P+26
+```
+
 # Operators and Expressions
 
 TOOD - Placeholder
