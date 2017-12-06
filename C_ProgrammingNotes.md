@@ -50,6 +50,8 @@ ld       | "%ld - %9ld - %09ld"     | print signed long                   | 1, 2
 lu       | "%lu - %9lu - %09lu"     | print unsigned long                 | 1, 2
 lld      | "%lld - %9lld - %09lld"  | print signed long long              | 1, 2
 llu      | "%llu - %9llu - %09llu"  | print unsigned long long            | 1, 2
+h        | "%d - %6d - %05d"        | print signed integer                | 1, 2
+du       | "%du - %6du - %06du"     | print unsigned integer              | 1, 2
 
 
 1. Number proceeding the type placeholder specifies the output lenghth
