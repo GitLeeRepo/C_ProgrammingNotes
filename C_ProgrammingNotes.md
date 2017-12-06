@@ -55,41 +55,41 @@ TOOD - Placeholder
 
 * **scanf()** - in general it is used to read a single word at a time from standard input, with each **%s** in the format string reading up to the first newline.
 
-```c
-scanf("%s", name);
-```
+  ```c
+  scanf("%s", name);
+  ```
 
 * **gets()** - reads a string from standard input.  It reads up to the first newline that is encountered and adds a null '\\0' to the end.  The space for the string must be allocated before passing it to gets().  On success it returns a pointer to the same string passed as a parameter, but if there is an error or it reaches the end of the file then null is returned.  A downside of **gets()** is that it doesn't check if the string entered will fit into the string buffer provided, **fgets()** can be used which allows a maximum length to read to be passed. **gets()** does NOT include the newline character as part of the string, whereas **fgets()** does include it.
 
-```c
-char name[40];
+  ```c
+  char name[40];
 
-gets(name);
-```
+  gets(name);
+  ```
 
 * **fgets()** - when used with standard input, i.e. **fgets(inStr, MaxSize, stdin)** it functions like **gets()** with two important differences, the first is it allows you to specify the maximum input buffer size, and second is it includes the newline as part of the string.
 
-```c
-char name[MAX_SIZE];
+  ```c
+  char name[MAX_SIZE];
 
-fgets(name, MAX_SIZE, stdin);
-```
+  fgets(name, MAX_SIZE, stdin);
+  ```
 
 * **scanf()** - reads a single word (the string up to a newline (space, tab, newline)), or up to the number indicated in the format string, **%5s** for example, whichever comes first.  It returns the number of characters read.
 
-```c
-char name[20];
-int numCharsRead;
+  ```c
+  char name[20];
+  int numCharsRead;
 
-// for "William Smith", it returns "William" to name and 7 for numCharsRead
-numCharsRead = scanf("%s", name);
+  // for "William Smith", it returns "William" to name and 7 for numCharsRead
+  numCharsRead = scanf("%s", name);
 
-// for "William Smith", it returns "Will" to name and 4 for numCharsRead
-numCharsRead = scanf("%4s", name);
+  // for "William Smith", it returns "Will" to name and 4 for numCharsRead
+  numCharsRead = scanf("%4s", name);
 
-// for "William Smith", it returns "William" to name and 7 for numCharsRead
-// since it reads up to the **%20s** or newline, whichever comes first
-numCharsRead = scanf("%20s", name);
+  // for "William Smith", it returns "William" to name and 7 for numCharsRead
+  // since it reads up to the **%20s** or newline, whichever comes first
+  numCharsRead = scanf("%20s", name);
 ```
 
 ## Printf Format Strings
