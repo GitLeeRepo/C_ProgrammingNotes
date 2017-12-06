@@ -91,6 +91,20 @@ TOOD - Placeholder
   // since it reads up to the **%20s** or newline, whichever comes first
   numCharsRead = scanf("%20s", name);
   ```
+  
+## String Standard Output Functions
+
+* **puts()** - writes an **unformatted** string to standard output, appending a newline character on the end
+
+  ```c
+  char str1[40] = "this is a test";
+  char *str2 = "here is another test";
+  
+  puts(str1); // outputs: this is a test\n
+  puts(str2); // outputs: here is another test\n
+  ```
+
+* **printf()** - write a **formatted** string to standard output, it does not append a newline, so it must be explicitly added if one is needed.  It does not flush its output until the output buffer is full, a newline is encountered, or an input function such as **scanf()** is encountered.  You can force it to flush its output with the **fflush()** function.  **printf()** has the format of **printf(formatStr, arg1, ...)**, for example, **printf("Hello %s\n", name);**.  Refer to the following **Printf Format Strings** section for details.
 
 ## Printf Format Strings
 
