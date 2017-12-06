@@ -47,7 +47,7 @@ This repository also contain information on the [gcc compiler](https://github.co
 
 ## Type Conversions
 
-TOOD - Placeholder
+TODO - Placeholder
 
 # Character Strings
 
@@ -362,55 +362,55 @@ strings 1 & 2 ("%-20s  %s"): Hello, World!         How goes things?
 
 # Operators and Expressions
 
-TOOD - Placeholder
+TODO - Placeholder
 
 # Control Statements
 
-TOOD - Placeholder
+TODO - Placeholder
 
 # Input and Output
 
-TOOD - Placeholder
+TODO - Placeholder
 
 ## Character Input and Output
 
-TOOD - Placeholder
+TODO - Placeholder
 
 ## String and Text Input and Output
 
-TOOD - Placeholder
+TODO - Placeholder
 
 ### Input Validation
 
-TOOD - Placeholder
+TODO - Placeholder
 
 # Loops
 
-TOOD - Placeholder
+TODO - Placeholder
 
 # Arrays and Pointers
 
-TOOD - Placeholder
+TODO - Placeholder
 
 ## Arrays
 
-TOOD - Placeholder
+TODO - Placeholder
 
 ## Pointers
 
-TOOD - Placeholder
+TODO - Placeholder
 
 # Structures
 
-TOOD - Placeholder
+TODO - Placeholder
 
 # Functions
 
-TOOD - Placeholder
+TODO - Placeholder
 
 # Memory and Memory Allocation
 
-TOOD - Placeholder
+TODO - Placeholder
 
 # Static Data Types and Functions
 
@@ -428,15 +428,15 @@ Static local variables (declared within functions) and static functions remain a
 
 Refer also to: * [LinuxSysProgNotes](https://github.com/GitLeeRepo/LinuxSysProgNotes/blob/master/LinuxSysProgNotes) - specifically the file I/O topics.
 
-TOOD - Placeholder
+TODO - Placeholder
 
 # Preprocessor
 
-TOOD - Placeholder
+TODO - Placeholder
 
 # Mutliple Modules
 
-TOOD - Placeholder
+TODO - Placeholder
 
 # Data Structures
 
