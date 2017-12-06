@@ -126,7 +126,7 @@ s        | "%s - %10s - %-10s       | print a character string                  
     printf("pointer to unsigned long 1: %10p (six byte address)\n\n", &ulongEx1);
 ```
 
-**Output:***
+**Output:**
 
 ```bash
 Integer formats (with max/min values):
