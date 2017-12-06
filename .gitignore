@@ -52,7 +52,12 @@ Mkfile.old
 dkms.conf
 
 # Executables
+datatypesizes
+formatstr
+longsum
 singlelink
 stack_array
 stack_dynarray
 stack_lnklist
+straddr32
+strddr64
