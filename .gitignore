@@ -52,6 +52,7 @@ Mkfile.old
 dkms.conf
 
 # Executables
+carray_vs_pointer
 datatypesizes
 formatstr
 longsum
