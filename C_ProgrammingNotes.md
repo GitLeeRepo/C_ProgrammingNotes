@@ -428,7 +428,7 @@ Static local variables (declared within functions) and static functions remain a
 
 # File Input and Output
 
-Refer also to: * [LinuxSysProgNotes](https://github.com/GitLeeRepo/LinuxSysProgNotes/blob/master/LinuxSysProgNotes) - specifically the file I/O topics.
+Refer also to: * [LinuxSysProgNotes](https://github.com/GitLeeRepo/LinuxSysProgNotes/blob/master/LinuxSysProgNotes.md#overview) - specifically the file I/O topics.
 
 TODO - Placeholder
 
