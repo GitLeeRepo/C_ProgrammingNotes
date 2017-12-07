@@ -183,6 +183,8 @@ lld      | "%lld - %9lld - %09lld"  | print signed long long                    
 llu      | "%llu - %9llu - %09llu"  | print unsigned long long                  | 1, 2
 hd       | "%hd - %6hd - %05hd"     | print signed short                        | 1, 2
 hu       | "%hu - %6hu - %06hu"     | print unsigned short                      | 1, 2
+zd       | "%zd - %6zd - %05zd"     | print signed size_t                       | 1, 2
+zu       | "%zu - %9zu - %09zu"     | print unsigned size_t                     | 1, 2
 x, X     | "%x - %6x - %09x"        | print hexadecimal unsigned integer        | 1, 2, 4
 lx, lX   | "%lx - %9lx - %09lx"     | print hexadecimal unsigned long           | 1, 2, 4
 hx, hX   | "%hx - %6hx - %09hx"     | print hexadecimal unsigned short          | 1, 2, 4
