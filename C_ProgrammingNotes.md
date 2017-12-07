@@ -70,6 +70,8 @@ printf("%s occupies %d bytes of memory and is %d characters long\n", name, sizeo
 
 ## String Arrays vs String Pointers
 
+Refer also to [carray_vs_pointer.c](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/demotest/array_vs_pointer/carray_vs_pointer.c) which has similar examples, and also demostrates passing the character arrays and pointers to functions.
+
 For the most part you can treat a string defined with character array notation **char name\[40\] = "Hello, World!";**, the same as **char \*msg = "Hello, World!";**, but there are differences as shown in this example:
 
 ```c
