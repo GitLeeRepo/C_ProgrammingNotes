@@ -54,6 +54,7 @@ dkms.conf
 # Executables
 carray_vs_pointer
 datatypesizes
+factorial
 formatstr
 longsum
 singlelink
