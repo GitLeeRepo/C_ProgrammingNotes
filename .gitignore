@@ -56,7 +56,9 @@ carray_vs_pointer
 datatypesizes
 factorial
 formatstr
+linearsearch
 longsum
+megasearch
 singlelink
 stack_array
 stack_dynarray

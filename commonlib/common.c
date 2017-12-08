@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <limits.h>
 
 void die(char *msg) {
     perror(msg);
@@ -53,4 +54,43 @@ int addCommas_ul(char  *commaNumStr, unsigned long ulNum) {
         k++;
     }
     return numlen;
+}
+
+
+int maxIntAr(int *ar, int numElements) {
+    int max = 0;
+
+    for (int i = 0; i < numElements; i++) {
+        if (ar[i] > max)
+            max = ar[i];
+    }
+    return max;
+}
+
+int minIntAr(int *ar, int numElements) {
+    int min = INT_MAX;
+
+    for (int i = 0; i < numElements; i++) {
+        if (ar[i] < min)
+            min = ar[i];
+    }
+    return min;
+}
+
+int checkDupeIntAr(int *ar, int numElements, int *dupeNum) {
+    int count = 0;
+    *dupeNum = 0;
+
+    for (int i = 0; i < numElements; i++) {
+        count = 0;
+        for (int j = 0;  j < numElements; j++) {
+            if (ar[i] == ar[j]) 
+                count++;
+            if (count == 2) {
+                *dupeNum = ar[i];
+                return 1; // yes dupes
+            }
+        } 
+    }
+    return 0; // no dupes
 }
