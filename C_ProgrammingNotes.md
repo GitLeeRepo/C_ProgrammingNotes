@@ -442,14 +442,13 @@ enum DaysOfWeek{Mon=1, Tue, Wed, Thur, Fri=10, Sat, Sun};
 **Output:**
 
 ```bash
+# for {Mon=1, Tue, Wed, Thur, Fri, Sat, Sun}
 Day 1 thru 5
 
-# or
-
+# or for {Mon=1, Tue, Wed, Thur, Fri=10, Sat, Sun}
 Day 1 thru 10
 
 # or if all days printed for {Mon=1, Tue, Wed, Thur, Fri=10, Sat, Sun}
-
 Days 1 2 3 4 10 11 12
 ```
 
