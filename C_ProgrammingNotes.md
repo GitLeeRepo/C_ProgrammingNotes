@@ -23,6 +23,10 @@ This repository also contain information on the [gcc compiler](https://github.co
 
 * [C Programming in Linux Series](https://www.youtube.com/watch?v=CKNjXvMB0MY&list=PLypxmOPCOkHXbJhUgjRaV2pD9MJkIArhg) - approx 100 videos on a wide range of C and Linux System Programming.
 
+## Standards
+
+* [GNU Codeing Standards](https://www.gnu.org/prep/standards/standards.html)
+
 
 # Fundemental Data Types
 
