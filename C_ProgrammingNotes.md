@@ -25,7 +25,7 @@ This repository also contain information on the [gcc compiler](https://github.co
 
 ## Standards
 
-* [GNU Codeing Standards](https://www.gnu.org/prep/standards/standards.html)
+* [GNU Coding Standards](https://www.gnu.org/prep/standards/standards.html)
 
 
 # Fundemental Data Types
