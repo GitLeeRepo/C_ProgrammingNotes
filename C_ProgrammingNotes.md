@@ -412,6 +412,48 @@ TODO - Placeholder
 
 TODO - Placeholder
 
+## Enum Examples
+
+```c
+enum DaysOfWeek{Mon, Tue, Wed, Thur, Fri, Sat, Sun};
+ 
+int main()
+{
+    enum DaysOfWeek dayOfWeek;
+    dayOfWeek = Mon;
+    printf("Day %d thru %d",dayOfWeek, dayofWeek);
+    return 0;
+} 
+```
+
+**Output:**
+
+```bash
+Day 0 thru 4
+```
+Note that by default numbering (when not explicit) starts with zero, and increments by 1 each time.  This can be changed, for example
+
+```c
+enum DaysOfWeek{Mon=1, Tue, Wed, Thur, Fri, Sat, Sun};
+//or
+enum DaysOfWeek{Mon=1, Tue, Wed, Thur, Fri=10, Sat, Sun};
+```
+
+**Output:**
+
+```bash
+Day 1 thru 5
+
+# or
+
+Day 1 thru 10
+
+# or if all days printed for {Mon=1, Tue, Wed, Thur, Fri=10, Sat, Sun}
+
+Days 1 2 3 4 10 11 12
+```
+
+
 # Functions
 
 TODO - Placeholder
