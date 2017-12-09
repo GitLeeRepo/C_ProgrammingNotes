@@ -59,6 +59,7 @@ formatstr
 linearsearch
 longsum
 megasearch
+recursepower
 singlelink
 stack_array
 stack_dynarray

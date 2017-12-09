@@ -6,9 +6,9 @@
 # recompiles the specified files and header if they have changed since last 
 # compile
 
-EXE = factorial
+EXE = factorial recursepower
 INCFILES =
-LDLIBS =
+LDLIBS = ~/source/c/commonlib/common.o
 CC=gcc
 CFLAGS = -gdwarf -Wall
 
