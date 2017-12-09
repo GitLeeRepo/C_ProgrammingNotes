@@ -408,6 +408,10 @@ TODO - Placeholder
 
 TODO - Placeholder
 
+# Enums
+
+TODO - Placeholder
+
 # Functions
 
 TODO - Placeholder
