@@ -272,30 +272,41 @@ Note: finale was added here as an example of having two phony targets, to show t
 Refer to the comment included in the makefile below for details, and to the output which follows
 
 ```make
-# Simple make for compiling individual C files into individual executables of the same name.
-# It is not suitable (in its current form) for executables made up of multiple object files.
-# Intended for compiling simple demo/concept programs
-# This relies on implicit variables and default actions to do the compile of the ${EXE} target.
-# The implicit CC and CFLAGS are redefined here, while RM uses the default 'rm -f'
-# Only recompiles the specified files and header if they have changed since last compile
+# Simple make for compiling individual C files into individual executables of 
+# the same name. Intended for compiling simple demo/concept programs with 
+# multiple executables in same directory This relies on implicit variables 
+# and default actions to do the compile of the $(EXE) target. The implicit CC 
+# and CFLAGS are redefined here, while RM uses the default 'rm -f'. Only 
+# recompiles the specified files and header if they have changed since last 
+# compile
+
+# common library and include directory
+COMMON_DIR = ../commonlib
+COMMON_LIB = $(COMMON_DIR)/common.o
+COMMON_INCL = $(COMMON_DIR)/common.h
 
 EXE = unix_socket_srv unix_socket_clnt tcp_socket_srv tcp_socket_clnt
-INCFILES = unix_socket.h
+INCFILES = $(COMMON_INCL) socket.h
+LDLIBS = $(COMMON_LIB)
 CC=gcc
 CFLAGS = -gdwarf -Wall
 
 .PHONY: info clean
 
-all: info ${EXE}
+all: info $(LDLIBS) $(EXE)
 
 info:
 	@echo "Info: make for: $(EXE)"
 
 # compile happens here
-${EXE}: $(INCFILES) 
+$(EXE): $(INCFILES)  
+
+# compile common object file
+$(LDLIBS): $(INCFILES) 
 
 clean:
-	$(RM) $(EXE)
+	$(RM) $(EXE) *.o
+
 ```
 
 **OUTPUTS:**
@@ -304,11 +315,10 @@ clean:
 $ make clean
 rm -f unix_socket_srv unix_socket_clnt tcp_socket_srv tcp_socket_clnt
 $ make
-Info: make for: unix_socket_srv unix_socket_clnt tcp_socket_srv tcp_socket_clnt
-gcc -gdwarf -Wall    unix_socket_srv.c unix_socket.h   -o unix_socket_srv
-gcc -gdwarf -Wall    unix_socket_clnt.c unix_socket.h   -o unix_socket_clnt
-gcc -gdwarf -Wall    tcp_socket_srv.c unix_socket.h   -o tcp_socket_srv
-gcc -gdwarf -Wall    tcp_socket_clnt.c unix_socket.h   -o tcp_socket_clnt
+gcc -gdwarf -Wall unix_socket_srv.c ../commonlib/common.h socket.h  ../commonlib/common.o -o unix_socket_srv
+gcc -gdwarf -Wall unix_socket_clnt.c ../commonlib/common.h socket.h  ../commonlib/common.o -o unix_socket_clnt
+gcc -gdwarf -Wall tcp_socket_srv.c ../commonlib/common.h socket.h  ../commonlib/common.o -o tcp_socket_srv
+gcc -gdwarf -Wall tcp_socket_clnt.c ../commonlib/common.h socket.h  ../commonlib/common.o -o tcp_socket_clnt
 ```
 
 ## Using both nasm and c and creating an iso file
