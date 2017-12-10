@@ -8,12 +8,12 @@
 #include <limits.h>
 #include <string.h>
 #include <time.h>
+#include "../../commonlib/common.h"
 
 // forward and external declarations
 unsigned long doSum(unsigned long maxIterations,
                     unsigned long divOnIterationNum,
                     unsigned long sumOnInterationNum);
-int addCommas_ul(char  *commaNum, unsigned long bigsum);
 
 
 int main(int argc, char *argv[]) {

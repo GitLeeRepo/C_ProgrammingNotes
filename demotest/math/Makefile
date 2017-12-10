@@ -12,22 +12,20 @@ COMMON_LIB = $(COMMON_DIR)/common.o
 COMMON_INCL = $(COMMON_DIR)/common.h
 
 EXE = math_example
-# OBJ = math_example.o
 INCFILES = $(COMMON_INCL)
 LDLIBS = $(COMMON_LIB)
 CC=gcc
 CFLAGS = -gdwarf -Wall 
 # Note math.h functions need math lib linked (-lm)
 OUTPUT_OPTION = -o $@ -lm
+
 .PHONY: info clean
 
-all: info $(LDLIBS) $(OBJ) $(EXE) 
+all: info $(LDLIBS) $(EXE) 
 
 info:
 	@echo "Info: make for: $(EXE)"
 
-%.o: %.c $(INCFILES)
-	$(COMPILE.c) $<  -o $@
 	
 # compile happens here
 %: %.c $(INCFILES) 

@@ -13,12 +13,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <limits.h>
+#include "../../commonlib/common.h"
 
 // forward & external declarations
 int linearSearch(int *ar, int key, int min, int max);
-int maxIntAr(int *ar, int numElements);
-int minIntAr(int *ar, int numElements);
-int checkDupeIntAr(int *ar, int numElements, int *dupeNum);
  
 int main(int argc, char *argv[]) {
     int ar[] = { 35, 24, 40, 19, 5, 45, 32 , 31 , 8, 23, 47, 27, 44, 38, 7, 6, 11, 33, 21, 15, 50,

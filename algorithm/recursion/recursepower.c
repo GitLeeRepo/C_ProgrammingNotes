@@ -6,11 +6,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include "../../commonlib/common.h"
 
 // forward and external declarations
 long raiseToRecurse(long, long);
 long raiseToLoop(long, long);
-void info_die(char*);
  
 int main() {
     long x, y;

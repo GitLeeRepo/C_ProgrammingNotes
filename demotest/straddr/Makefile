@@ -11,13 +11,11 @@ COMMON_DIR = ../../commonlib
 COMMON_LIB = $(COMMON_DIR)/common.o
 COMMON_INCL = $(COMMON_DIR)/common.h
 
-EXE = factorial recursepower multi multi2
-INCFILES = $(COMMON_INCL)
-LDLIBS = $(COMMON_LIB)
+EXE = straddr32 straddr64
+INCFILES =
+LDLIBS =
 CC=gcc
 CFLAGS = -gdwarf -Wall
-# Note math.h functions need math lib linked (-lm)
-OUTPUT_OPTION = -o $@ -lm
 
 .PHONY: info clean
 
@@ -27,8 +25,7 @@ info:
 	@echo "Info: make for: $(EXE)"
 
 # compile happens here
-%: %.c $(INCFILES)
-	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) $(OUTPUT_OPTION)
+$(EXE): $(INCFILES) 
 
 # compile common object tile
 $(LDLIBS): $(INCFILES) 

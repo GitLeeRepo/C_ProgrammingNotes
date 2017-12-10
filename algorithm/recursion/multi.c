@@ -17,7 +17,6 @@ long multi(int n, int x, int y) {
         
         printf("before: %4d %8d %8d\n", n, x, y); 
         return multi(--n, x, y) + (x*y);
-        printf("after: %4d %8d %8d\n", n, x, y); 
     }
 }
 

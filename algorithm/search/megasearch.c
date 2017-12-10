@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <limits.h>
+#include "../../commonlib/common.h"
 
 // forward declarations
 int linearSearch(unsigned long *ar, unsigned long key, unsigned long min, unsigned long max);

@@ -71,4 +71,4 @@ stack_array
 stack_dynarray
 stack_lnklist
 straddr32
-strddr64
+straddr64
