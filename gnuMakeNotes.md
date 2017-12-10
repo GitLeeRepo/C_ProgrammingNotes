@@ -327,6 +327,8 @@ This one includes the math.h related mathlib by using the **-lm** switch.  This 
 
 Note the use of the **%:** wildcard for the target instead of my usual **$(EXE):** target.  This was necessary so I could use the **%.c** prerequisite needed by the **LINK.c** variable.  Even though the **$(EXE)** is not explicitly used here as the target it is still related, notice the **all:** specifies it which provides a reference to the **%:** target label.
 
+This example only uses one executable, but it works equally well when additional executables are included.
+
 ```make
 # common library and include directory
 COMMON_DIR = ../../commonlib
@@ -364,7 +366,59 @@ clean:
 
 ```bash
 Info: make for: math_example
-gcc -gdwarf -Wall     math_example.c ../../commonlib/common.h  ../../commonlib/common.o -o math_example -lm
+gcc -gdwarf -Wall math_example.c ../../commonlib/common.h  ../../commonlib/common.o -o math_example -lm
+```
+
+## Including GCC Lib with Intermediate Object Files Generated
+
+This does the same thing as the prior example, it also includes the mathlib flag **-lm**, but in addition it also has a separate object file target generation, i.e. a two step compilation process.
+
+Notice the use of the **%:**, **%.c**, and **%.o** wildcards.  Even though the **$(OBJ)** variable is not directly used it needs to be defined with the object files to be generated, it uses this in the **all:** step to specify the **%.o** target needs to be run.  Note the order is important, it needs to come in front of the **$(EXE)** in the **all:** rule.
+
+This example only uses one executable and object file, but it works equally well when additional executables and their associated object files are included.
+
+```make
+# common library and include directory
+COMMON_DIR = ../../commonlib
+COMMON_LIB = $(COMMON_DIR)/common.o
+COMMON_INCL = $(COMMON_DIR)/common.h
+
+EXE = math_example
+OBJ = math_example.o
+INCFILES = $(COMMON_INCL)
+LDLIBS = $(COMMON_LIB)
+CC=gcc
+CFLAGS = -gdwarf -Wall 
+# Note math.h functions need math lib linked (-lm)
+OUTPUT_OPTION = -o $@ -lm
+.PHONY: info clean
+
+all: info $(LDLIBS) $(OBJ) $(EXE) 
+
+info:
+	@echo "Info: make for: $(EXE)"
+
+# Generate associated object file
+%.o: %.c $(INCFILES)
+	$(COMPILE.c) $<  -o $@
+	
+# compile happens here
+%: %.o $(INCFILES) 
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) $(OUTPUT_OPTION)
+
+# compile common object tile
+$(LDLIBS): $(INCFILES) 
+
+clean:
+	$(RM) $(EXE) *.o
+```
+
+**Output:**
+
+```bash
+Info: make for: math_example
+gcc -gdwarf -Wall -c math_example.c -o math_example.o
+gcc -gdwarf -Wall math_example.o ../../commonlib/common.h  ../../commonlib/common.o -o math_example -lm
 ```
 
 ## Using both nasm and c and creating an iso file
