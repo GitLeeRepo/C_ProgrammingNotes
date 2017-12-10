@@ -321,6 +321,52 @@ gcc -gdwarf -Wall tcp_socket_srv.c ../commonlib/common.h socket.h  ../commonlib/
 gcc -gdwarf -Wall tcp_socket_clnt.c ../commonlib/common.h socket.h  ../commonlib/common.o -o tcp_socket_clnt
 ```
 
+## Including a GCC Library (mathlib)
+
+This one includes the math.h related mathlib by using the **-lm** switch.  This required more specific rules defined in this make, than in the prior example which relied almost entirely on default behaviors. This one specifies more explict rules such as **$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) $(OUTPUT_OPTION)** so that the **OUTPUT_OPTION** on the end could include the **-lm** flag (it doesn't work by including it in the CFLAGS or LDFLAGS).
+
+Note the use of the **%:** wildcard for the target instead of my usual **$(EXE):** target.  This was necessary so I could use the **%.c** prerequisite needed by the **LINK.c** variable.  Even though the **$(EXE)** is not explicitly used here as the target it is still related, notice the **all:** specifies it which provides a reference to the **%:** target label.
+
+```make
+# common library and include directory
+COMMON_DIR = ../../commonlib
+COMMON_LIB = $(COMMON_DIR)/common.o
+COMMON_INCL = $(COMMON_DIR)/common.h
+
+EXE = math_example
+INCFILES = $(COMMON_INCL)
+LDLIBS = $(COMMON_LIB)
+CC=gcc
+CFLAGS = -gdwarf -Wall 
+# Note math.h functions need math lib linked (-lm)
+OUTPUT_OPTION = -o $@ -lm
+
+.PHONY: info clean
+
+all: info $(LDLIBS) $(EXE) 
+
+info:
+	@echo "Info: make for: $(EXE)"
+
+	
+# compile happens here
+%: %.c $(INCFILES) 
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) $(OUTPUT_OPTION)
+
+# compile common object tile
+$(LDLIBS): $(INCFILES) 
+
+clean:
+	$(RM) $(EXE) *.o
+```
+
+**Output:**
+
+```bash
+Info: make for: math_example
+gcc -gdwarf -Wall     math_example.c ../../commonlib/common.h  ../../commonlib/common.o -o math_example -lm
+```
+
 ## Using both nasm and c and creating an iso file
 
 ```make
