@@ -51,6 +51,9 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# Temp C File Exlusions
+multi2.c
+
 # Executables
 carray_vs_pointer
 datatypesizes
@@ -58,7 +61,10 @@ factorial
 formatstr
 linearsearch
 longsum
+math_example
 megasearch
+multi
+multi2
 recursepower
 singlelink
 stack_array

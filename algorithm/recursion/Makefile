@@ -6,7 +6,7 @@
 # recompiles the specified files and header if they have changed since last 
 # compile
 
-EXE = factorial recursepower
+EXE = factorial recursepower multi multi2
 INCFILES =
 LDLIBS = ~/source/c/commonlib/common.o
 CC=gcc

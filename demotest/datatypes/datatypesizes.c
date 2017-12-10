@@ -17,6 +17,10 @@ int main(void) {
     promptAndClear();
 
     printf("\n\nFloat Formats (col 1 num assiged width, col 2 extra width):\n");
+    printf("Note how the double 1 loses precision in the last two digits, it has 15 significant\n");
+    printf("digits, but seems to get 17 right.  The long double 1 is able to display the full\n");
+    printf("20 sig digits stored, though according to docs it has 18 sig digits (for 80bit).\n");
+    printf("Maybe just randomly lucky on the last few digits.\n");
     floatFormats();
 
     promptAndClear();
@@ -76,15 +80,16 @@ void intFormats() {
 
 
 void floatFormats() {
-    float floatEx1 = 12345.6789;
-    double doubleEx1 = 123456789.0123456789;
-    double doubleEx2 = 0.000000123456789;
-    long double longdoubleEx1 = 123456789.0123456789;
+    float floatEx1 = 12345.678901;                     // precise through 6 significant digits
+    double doubleEx1 = 123456789.0123456789;           // precise through 15 significant digits
+    double doubleEx2 = 0.123456789012345678;           // precise through 15 significant digits
+    long double longdoubleEx1 = 123456789.0123456789L; // precise through 18 significant digits
+                                                       // note the L needed on the end for long prec
 
     printf("    float 1: %23.4f; %26.10f sizeof: %lu\n", floatEx1, floatEx1, sizeof(floatEx1));
-    printf("   double 1: %23.10f; %26.14f sizeof: %lu\n", doubleEx1, doubleEx1, sizeof(doubleEx1));
-    printf("   double 2: %23.15f; %26.20f sizeof: %lu\n", doubleEx2, doubleEx2, sizeof(doubleEx2));
-    printf(" long dbl 2: %23.12Lf; %26.15Lf sizeof: %lu\n\n", longdoubleEx1, longdoubleEx1, 
+    printf("   double 1: %23.10f; %26.14lf sizeof: %lu\n", doubleEx1, doubleEx1, sizeof(doubleEx1));
+    printf("   double 2: %23.15f; %26.20lf sizeof: %lu\n", doubleEx2, doubleEx2, sizeof(doubleEx2));
+    printf(" long dbl 1: %23.10Lf; %26.14Lf sizeof: %lu\n\n", longdoubleEx1, longdoubleEx1, 
                                                                                 sizeof(longdoubleEx1));
 
     printf(" g double 1: %23.10g; %26.14g sizeof: %lu\n", doubleEx1, doubleEx1, sizeof(doubleEx1));
