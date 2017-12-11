@@ -503,7 +503,7 @@ Reference: [Cmdline Args - Caltech](http://courses.cms.caltech.edu/cs11/material
 
 ## Debugging using a Symbol Defined During Compilation
 
-You can optionally assign variables on the make command line for example, **make CARG=-DDEBUG**, which can then be used within the make file itself, and passed onto the gcc compiler.
+You can optionally assign variables on the make command line for example, **make CARG=-DDEBUG**, which can then be used within the make file itself, and passed onto the gcc compiler.  Ths can also be done directly on the command line with **gcc**, without using make.
 
 ## Passing Debug Flag Example
 
