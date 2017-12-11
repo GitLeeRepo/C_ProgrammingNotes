@@ -265,6 +265,32 @@ Note that these predefined Implicit Rules make the creation of the actual make f
 ```
 Note: finale was added here as an example of having two phony targets, to show they are delimeted by spaces.
 
+# Assigning Variable from Make Commandline
+
+You can optionally assign variables on the make command line for example, **make CARG=-DDEBUG**, which can then be used within the make file itself.
+
+'''bash
+make CARG=-DDEBUG
+```
+
+Which within the Makefile can be used as follows
+
+```make
+...
+# CARG in following can be optionally assigned on make command line, e.g, make CARG=-DDEBUG
+CFLAGS = -gdwarf -Wall  $(CARG)
+'''
+```
+Which will append this variable to **CFLAGS**, which will in turn be used by the **gcc** compiler, in this example in addition to the other CFLAGS it will pass on the **-DDEBUG** command that will assign the **DEBUG** compiler directive in the **C Programming** environment.  For example it would then be used in C as follows:
+
+```c
+#ifdef DEBUG
+#define DBG(fmt, args...) printf("%s:%s:%d "fmt, __FILE__, __FUNCTION__, __LINE__, args)
+#else
+#define DBG(fmt, args...)
+#endif
+```
+
 # Example Makefiles
 
 ## Multiple Executables
