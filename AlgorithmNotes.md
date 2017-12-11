@@ -4,6 +4,8 @@ Notes and various algorithms as implemented in the C programming language
 
 # References
 
+* [Data Structures and Algorithms - tutorialspoint.com](https://www.tutorialspoint.com/data_structures_algorithms/index.htm)
+
 # Books
 
 * [Algorithms Illuminated](https://www.amazon.com/Algorithms-Illuminated-Part-1-Basics-ebook/dp/B075YQP38X) refer also to the companion YouTube series below.
