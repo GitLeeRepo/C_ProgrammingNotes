@@ -4,6 +4,8 @@ Notes on various data structures as implemented in the C programming language
 
 # References
 
+* [Data Structures and Algorithms - tutorialspoint.com](https://www.tutorialspoint.com/data_structures_algorithms/index.htm)
+
 # Concepts and Terminology
 
 * **Data Structure** - a means of storing and organizing data in structured way that is optimal and useful for a given requirement.  They inlcude files, arrays, linked lists, stacks, queues, dictionaries, hash tables, trees, graphs, etc.  There are two general types:
