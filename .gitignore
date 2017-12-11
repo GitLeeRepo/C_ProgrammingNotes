@@ -53,8 +53,13 @@ dkms.conf
 
 # Temp C File Exlusions
 multi2.c
+badmergesort.c
+
+# Data files
+megasearch.dat
 
 # Executables
+badmergesort
 carray_vs_pointer
 datatypesizes
 factorial
@@ -63,6 +68,7 @@ linearsearch
 longsum
 math_example
 megasearch
+mergesort
 multi
 multi2
 recursepower
