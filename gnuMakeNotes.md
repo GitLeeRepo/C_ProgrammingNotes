@@ -269,7 +269,9 @@ Note: finale was added here as an example of having two phony targets, to show t
 
 You can optionally assign variables on the make command line for example, **make CARG=-DDEBUG**, which can then be used within the make file itself.
 
-'''bash
+## Passing Debug Flag Example
+
+```bash
 make CARG=-DDEBUG
 ```
 
