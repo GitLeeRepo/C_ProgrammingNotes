@@ -57,6 +57,7 @@ badmergesort.c
 
 # Data files
 megasearch.dat
+*.bak
 
 # Executables
 badmergesort
@@ -72,9 +73,11 @@ mergesort
 multi
 multi2
 recursepower
+simple_recursion
 singlelink
 stack_array
 stack_dynarray
 stack_lnklist
 straddr32
 straddr64
+strinit_examples
