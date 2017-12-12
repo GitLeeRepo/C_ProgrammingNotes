@@ -432,13 +432,6 @@ scanf("%c", &ch);  // get the char you want
 getchar(); // discard the new line
 ```
 
-or reach **getchar()** in a loop
-
-```c
-while (ch getchar() != '\n') {
-    ...
-}
-```
 
 For **scanf()** you can also proceed the format character with a space, which will discard any whitespaces, including newlines.
 
