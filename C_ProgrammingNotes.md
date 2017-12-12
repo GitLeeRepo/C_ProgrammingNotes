@@ -401,7 +401,50 @@ TODO - Placeholder
 
 ## Character Input and Output
 
-TODO - Placeholder
+### Character input
+
+**Using getchar()** and **getc()**
+
+**getchar()** reads a character from **stdin**, while **getc()** reads from any input stream.  **getchar()** is equivellent to **getc(stdin)**.
+
+```c
+int c;
+
+c = getchar();
+while (c != EOF) {
+    putchar(c);
+    c = getchar();
+}
+``
+Note the use of **int** rather than **char** for defining that character, because **getchar()** itself is defined to return an **int**. One of the reasons for this is so the **EOF** character can be read reliably, since the standards define it as being a non-specific negative number.  While **-1** will work for a char, **-255** will not.  This applices to both **getchar()** and **getc()**
+
+### getchar() and scanf("%c", &ch) Dangling Newline
+
+By default both **getchar()** and **scanf()** use **buffered input** that is terminated when a newline is entered, i.e., you enter a character followed by Enter.  This gets your character, but leaves the newline in the input buffer, which will cause an issue if you have another character input which follows, since it will read the newline and proceed without getting the input you intended.
+
+There are a few ways to deal with this.  With both **scanf()** and **getchar** you can follow the call with another **getchar()** to remove the newline.
+
+```c
+ch = getchar();  // get the char you want
+getchar(); // discard the newline
+
+scanf("%c", &ch);  // get the char you want
+getchar(); // discard the new line
+```
+
+or reach **getchar()** in a loop
+
+```c
+while (ch getchar() != '\n') {
+    ...
+}
+```
+
+For **scanf()** you can also proceed the format character with a space, which will discard any whitespaces, including newlines.
+
+```c
+scanf(" %c", &ch);  // get the char you want, and discard the newline
+```
 
 ## String and Text Input and Output
 
