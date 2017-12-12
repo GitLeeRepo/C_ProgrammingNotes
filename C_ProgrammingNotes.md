@@ -57,6 +57,25 @@ TODO - Placeholder
 
 There are not any predefined string types in C, instead C uses a **null terminated** (**\\0**) character array, to store string data.  String literals are placed in **double quotes**, whereas a character data type stores a single character using a **single quoted** character.
 
+## String Initialization
+
+On declaration a string can be initialized to an explicit value:
+
+```c
+    char str1[80] = "Hello, World!"; // buffer bigger than the string, it can safely be filled up to 80 chars (include null terminator)
+    char str2[] = "Hello, World!";   // buffer (14 bytes) the same size as the string, including null terminator
+    char *str3 = "Hello, World!";    // buffer (14 bytes) pointer version of prior examples
+    char str4[80] = "";              // empty string, the first byte is set to null ('\0')
+    char str5[80] = { '\0' };        // the entire buffer is filled with nulls ('\0')
+
+    // after declaration they can also be initialized
+    strcpy(str1, "Hello, World!  How are you?");  // a slightly longer version of the declaration (ok since it has an 80 byte buffer)
+    strcpy(str2, "Hey, World!");  // ok since it is smaller than original buffer)
+    str3 = "Hello, World! How are you?"; // bigger than orig, but ok since this pointer now points to a new string
+    str4[0] = '\0';   // first byte nulled, the equivellent of its declaration initializtion
+    memset(str5, '\0', sizeof str4); // filled with all nulls, the equivellent of its declaration iniialization
+```
+
 ## Strings vs Characters
 
 A single character string such as **"A"** is not the same as a character **'A'**.  The character occupies one byte of memory, where as the single character string occupies two bytes, one for the character itself, and one for the **null character**.
@@ -128,7 +147,7 @@ For the most part you can treat a string defined with character array notation *
   scanf("%s", name);
   ```
 
-* **gets()** - reads a string from standard input.  It reads up to the first newline that is encountered and adds a null '\\0' to the end.  The space for the string must be allocated before passing it to gets().  On success it returns a pointer to the same string passed as a parameter, but if there is an error or it reaches the end of the file then null is returned.  A downside of **gets()** is that it doesn't check if the string entered will fit into the string buffer provided, **fgets()** can be used which allows a maximum length to read to be passed. **gets()** does NOT include the newline character as part of the string, whereas **fgets()** does include it.
+* **gets()** - (not recommended sintce it can be exploited through buffer overflow, use **fgets()** with stdin instead) reads a string from standard input.  It reads up to the first newline that is encountered and adds a null '\\0' to the end.  The space for the string must be allocated before passing it to gets().  On success it returns a pointer to the same string passed as a parameter, but if there is an error or it reaches the end of the file then null is returned.  A downside of **gets()** is that it doesn't check if the string entered will fit into the string buffer provided, **fgets()** can be used which allows a maximum length to read to be passed. **gets()** does NOT include the newline character as part of the string, whereas **fgets()** does include it.
 
   ```c
   char name[40];
