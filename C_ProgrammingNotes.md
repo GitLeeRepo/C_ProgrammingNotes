@@ -415,7 +415,7 @@ while (c != EOF) {
     putchar(c);
     c = getchar();
 }
-``
+```
 Note the use of **int** rather than **char** for defining that character, because **getchar()** itself is defined to return an **int**. One of the reasons for this is so the **EOF** character can be read reliably, since the standards define it as being a non-specific negative number.  While **-1** will work for a char, **-255** will not.  This applices to both **getchar()** and **getc()**
 
 ### getchar() and scanf("%c", &ch) Dangling Newline
