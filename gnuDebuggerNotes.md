@@ -75,7 +75,7 @@ When a watch is added, it will display the value of the watched variable/registe
 * **l 15** - (**list**) display 10 lines of source, starting at line 10 through 19 (5 before 15 and 5 including and after 15)
 * **l 1,20** - (**list**) display from line 1 through line 20
 * **whe** - (**where**) display the next line to be executed
-* **bt** - (**back trace**) show the current line of execution and what function you are in (current call stack frame).  If there are multiple nested calls it will show the call stacks of the calling procs that proceeded it.  To switch the context to one of the call frames higher in the call hierarch in order to examine its local variables enter **frame #** with the number being the frame number listed when running **bt**.
+* **bt** - (**back trace**) show the current line of execution and what function you are in (current call stack frame).  If there are multiple nested calls it will show the call stacks of the calling procs that proceeded it.  To switch the context to one of the call frames higher in the call hierarchy in order to examine its local variables enter **frame #** with the number being the frame number listed when running **bt**.
 
 Note: pressing **Enter** repeats the last command, so entering **list** followed by **Enter** on a blank line will list the next 10 lines of code.  This can be repeated until you reach the end of the program listing.
 
