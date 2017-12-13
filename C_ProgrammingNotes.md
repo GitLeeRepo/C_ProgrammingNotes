@@ -509,7 +509,6 @@ Day 1 thru 10
 Days 1 2 3 4 10 11 12
 ```
 
-
 # Functions
 
 TODO - Placeholder
@@ -552,7 +551,7 @@ Reference: [Cmdline Args - Caltech](http://courses.cms.caltech.edu/cs11/material
 
 * [AlgorithmNotes](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/AlgorithmNotes.md#overview)
 
-# Preporcessor Compiler Directives
+# Preprocessor Compiler Directives
 
 ## Debugging using a Symbol Defined During Compilation
 
