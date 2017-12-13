@@ -10,8 +10,8 @@ Notes on using the gdb debugger under Linux.  It also contains information on th
 
 # Command Line Args
 
-* **gdb progname** - launch with the executable name to debug.  Make sure the executable was complile/assembled with the **-g** flag to include debugging information (symbolic names, etc)
-* **gdb --args progname arg1 arg2 ...** - launch with command line arguements for progname
+* **gdb progname** - launch with the executable name to debug.  Make sure the executable was compile/assembled with the **-g** flag to include debugging information (symbolic names, etc)
+* **gdb --args progname arg1 arg2 ...** - launch with command line arguments for progname
 
 # Commands in the debugger
 
@@ -62,7 +62,7 @@ When a watch is added, it will display the value of the watched variable/registe
 * **wa varname** - (**watch**) - add a watch on varname
 * **wa $regname** - (**watch**) - add a watch on the specified register
 * **i wat** - (**info watch**) - display all watches
-* **awatch** - set a watchpoint for an expression.  The program will break when the expression is true.
+* **awatch** - set a watch point for an expression.  The program will break when the expression is true.
 * **rwatch varname** - shows watch when varname is read.  The program will break when the variable is read
 * **dis #** - (**disable**) - disable watch by number (use **i wat**) to get watch numbers.  It is still in the list, but is disabled
 * **en #** - (**enable**) - enable disabled watch by number
@@ -75,7 +75,7 @@ When a watch is added, it will display the value of the watched variable/registe
 * **l 15** - (**list**) display 10 lines of source, starting at line 10 through 19 (5 before 15 and 5 including and after 15)
 * **l 1,20** - (**list**) display from line 1 through line 20
 * **whe** - (**where**) display the next line to be executed
-* **bt** - (**back trace**) show the current line of exection and what function you are in (current call stack frame).  If there are multiple nested calls it will show the call stacks of the calling procs that proceeded it.  To switch the context to one of the call frames higher in the call hierarch in order to examine its local varibles enter **frame #** with the number being the frame number listed when running **bt**.
+* **bt** - (**back trace**) show the current line of execution and what function you are in (current call stack frame).  If there are multiple nested calls it will show the call stacks of the calling procs that proceeded it.  To switch the context to one of the call frames higher in the call hierarch in order to examine its local variables enter **frame #** with the number being the frame number listed when running **bt**.
 
 Note: pressing **Enter** repeats the last command, so entering **list** followed by **Enter** on a blank line will list the next 10 lines of code.  This can be repeated until you reach the end of the program listing.
 
@@ -105,7 +105,7 @@ Note: since **Enter** repeats the last command you can continue to **step** thro
 
 ## objdump Command
 
-Provides a dump for binary executables and object files.  The **-d** arguement tells it to disasseble the output, and the **-M intel** commnd tells it to display the assembly code in the **intel format** rather than the default **AT&T format**
+Provides a dump for binary executable and object files.  The **-d** argument tells it to disassemble the output, and the **-M intel** command tells it to display the assembly code in the **intel format** rather than the default **AT&T format**
 
 ```bash
 objdump -d -M intel ObjOrExeFile
@@ -113,7 +113,7 @@ objdump -d -M intel ObjOrExeFile
 
 ## Doing a Hex Dump
 
-Use the **xxd** utility to do a hex dump from a file, or from the console when no parameters are provided (end input wiht Ctrl-D)
+Use the **xxd** utility to do a hex dump from a file, or from the console when no parameters are provided (end input with Ctrl-D)
 
 ```bash
 xxd test.o

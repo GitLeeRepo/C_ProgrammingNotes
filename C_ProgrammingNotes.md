@@ -35,9 +35,9 @@ This repository also contain information on the [gcc compiler](https://github.co
 * **int** / **unsigned int** - 4 bytes/32 bits on 32/64 bit Linux
 * **long** / **unsigned long** - 8 bytes/64 bits on 64 bit Linux; same as int on 32 bit Linux
 * **long long** / **unsigned long long** - 8 bytes/64 bits on 32/64 bit Linux
-* **float** - 4 bytes/32 bits (6 signficant digits with a range (exponent) 10^-37 to 10^37). 23 bits used for signficant digits (**mantissa**), 8 for exponent, and 1 bit for the sign.
-* **double** -  8 bytes/64 bits (15 significant digits with a range (exponent) of 10^-308 o 10^308). 52 bits used for significant digits (**mantissa**), 11 for the exponenent, and 1 bit for the sign. 
-* **long double** - 16 bytes/128(80) bits (18 significant digits with **80 bit extended precission**).  With **gcc on x86** it is **80bit extended precision** with the full 128bit available with the **\_\_float128** data type.  For **80 bit extended** it is 63 bits used for significant digits (**mantisa**), 15 bits for the exponent, 1 bit for the integer part and 1 bit for the sign. It has a range of 10^-4951 to 10^4932
+* **float** - 4 bytes/32 bits (6 significant digits with a range (exponent) 10^-37 to 10^37). 23 bits used for significant digits (**mantissa**), 8 for exponent, and 1 bit for the sign.
+* **double** -  8 bytes/64 bits (15 significant digits with a range (exponent) of 10^-308 o 10^308). 52 bits used for significant digits (**mantissa**), 11 for the exponent, and 1 bit for the sign. 
+* **long double** - 16 bytes/128(80) bits (18 significant digits with **80 bit extended precision**).  With **gcc on x86** it is **80bit extended precision** with the full 128bit available with the **\_\_float128** data type.  For **80 bit extended** it is 63 bits used for significant digits (**mantissa**), 15 bits for the exponent, 1 bit for the integer part and 1 bit for the sign. It has a range of 10^-4951 to 10^4932
 
 ## Floating Point References
 
@@ -72,8 +72,8 @@ On declaration a string can be initialized to an explicit value:
     strcpy(str1, "Hello, World!  How are you?");  // a slightly longer version of the declaration (ok since it has an 80 byte buffer)
     strcpy(str2, "Hey, World!");  // ok since it is smaller than original buffer)
     str3 = "Hello, World! How are you?"; // bigger than orig, but ok since this pointer now points to a new string
-    str4[0] = '\0';   // first byte nulled, the equivellent of its declaration initializtion
-    memset(str5, '\0', sizeof str4); // filled with all nulls, the equivellent of its declaration iniialization
+    str4[0] = '\0';   // first byte nulled, the equivalent of its declaration initialization
+    memset(str5, '\0', sizeof str4); // filled with all nulls, the equivalent of its declaration initialization
 ```
 
 ## Strings vs Characters
@@ -93,13 +93,13 @@ printf("%s occupies %d bytes of memory and is %d characters long\n", name, sizeo
 
 ## String Arrays vs String Pointers
 
-Refer also to [carray_vs_pointer.c](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/demotest/array_vs_pointer/carray_vs_pointer.c) which has similar examples, and also demostrates passing the character arrays and pointers to functions.
+Refer also to [carray_vs_pointer.c](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/demotest/array_vs_pointer/carray_vs_pointer.c) which has similar examples, and also demonstrates passing the character arrays and pointers to functions.
 
 For the most part you can treat a string defined with character array notation **char name\[40\] = "Hello, World!";**, the same as **char \*msg = "Hello, World!";**, but there are differences as shown in this example:
 
 ```c
    // note: in array notation the string address is a constant, in pointer notation it is a variable
-   char str1[20];  // alocates 20 bytes of memory for the string
+   char str1[20];  // allocates 20 bytes of memory for the string
    char *str2; // doesn't allocate any memory, it must be allocates or the pointer must point
                // to an already allocated string
    char msg1[20] = "Hello, World"; // allocates 20 bytes of memory
@@ -174,7 +174,7 @@ TODO - Placeholder
 
 **Using getchar()** and **getc()**
 
-**getchar()** reads a character from **stdin**, while **getc()** reads from any input stream.  **getchar()** is equivellent to **getc(stdin)**.
+**getchar()** reads a character from **stdin**, while **getc()** reads from any input stream.  **getchar()** is equivalent to **getc(stdin)**.
 
 ```c
 int c;
@@ -185,7 +185,7 @@ while (c != EOF) {
     c = getchar();
 }
 ```
-Note the use of **int** rather than **char** for defining that character, because **getchar()** itself is defined to return an **int**. One of the reasons for this is so the **EOF** character can be read reliably, since the standards define it as being a non-specific negative number.  While **-1** will work for a char, **-255** will not.  This applices to both **getchar()** and **getc()**
+Note the use of **int** rather than **char** for defining that character, because **getchar()** itself is defined to return an **int**. One of the reasons for this is so the **EOF** character can be read reliably, since the standards define it as being a non-specific negative number.  While **-1** will work for a char, **-255** will not.  This applies to both **getchar()** and **getc()**
 
 ### getchar() and scanf("%c", &ch) Dangling Newline
 
@@ -220,7 +220,7 @@ TODO - Placehollder
   scanf("%s", name);
   ```
 
-* **gets()** - (not recommended sintce it can be exploited through buffer overflow, use **fgets()** with stdin instead) reads a string from standard input.  It reads up to the first newline that is encountered and adds a null '\\0' to the end.  The space for the string must be allocated before passing it to gets().  On success it returns a pointer to the same string passed as a parameter, but if there is an error or it reaches the end of the file then null is returned.  A downside of **gets()** is that it doesn't check if the string entered will fit into the string buffer provided, **fgets()** can be used which allows a maximum length to read to be passed. **gets()** does NOT include the newline character as part of the string, whereas **fgets()** does include it.
+* **gets()** - (not recommended since it can be exploited through buffer overflow, use **fgets()** with stdin instead) reads a string from standard input.  It reads up to the first newline that is encountered and adds a null '\\0' to the end.  The space for the string must be allocated before passing it to gets().  On success it returns a pointer to the same string passed as a parameter, but if there is an error or it reaches the end of the file then null is returned.  A downside of **gets()** is that it doesn't check if the string entered will fit into the string buffer provided, **fgets()** can be used which allows a maximum length to read to be passed. **gets()** does NOT include the newline character as part of the string, whereas **fgets()** does include it.
 
   ```c
   char name[40];
@@ -293,11 +293,11 @@ s        | "%s - %10s - %-10s       | print a character string                  
 
 1. Number proceeding the type placeholder specifies the output length
 2. Leading zero as in "%05d" or %09lu" will print leading zeros
-3. For floats the decimal number preceeding the type specfies how many digits before and after the decimal point
+3. For floats the decimal number preceeding the type specifies how many digits before and after the decimal point
 4. the x/X prints the number as an exponent.  The lower case 'x' prints a lower case letter 'x' in the hex number, and an upper case 'X' prints and uppercase letter 'X' in the hex number.
 5. the g/G types will either print as a decimal number or as an exponent depending on the size.  The lower case 'g' prints a lower case letter 'e' in the exponent, and an upper case 'G' prints and uppercase letter 'E' in the exponent.
 6. the e/E prints the number as an exponent.  The lower case 'e' prints a lower case letter 'e' in the exponent, and an upper case 'E' prints and uppercase letter 'E' in the exponent.
-7. Be aware that for character formats it will try to print the ASCII equivellent to the numeric value, many of which are non-printable characters.  This is intended for printable ASCII characters (A-Z, a-z, 0-9, punctuation, etc.)
+7. Be aware that for character formats it will try to print the ASCII equivalent to the numeric value, many of which are non-printable characters.  This is intended for printable ASCII characters (A-Z, a-z, 0-9, punctuation, etc.)
 8. This character string example shows a negative **-10s**, which will cause the string to be left justified, rather than the default right justified.
 
 
@@ -520,11 +520,11 @@ TODO - Placeholder
 
 # Static Data Types and Functions
 
-The word **static** has different meanings depending on whether you are deailing with **global static variables**, which effect the **scope of the variable** and **local static variables**, which effect the **lifetime of the variable**.
+The word **static** has different meanings depending on whether you are dealing with **global static variables**, which effect the **scope of the variable** and **local static variables**, which effect the **lifetime of the variable**.
 
 ## Global Static
 
-Within a module (a single C file), delcaring a variable to be **global** and **static**, means that variable is global to the module, but it is not visible outside the module.  **Non-static global variables** are accessible to other modules through the **extern** declarations and the **linker** resoving these references.
+Within a module (a single C file), declaring a variable to be **global** and **static**, means that variable is global to the module, but it is not visible outside the module.  **Non-static global variables** are accessible to other modules through the **extern** declarations and the **linker** resolving these references.
 
 ## Local Static
 

@@ -30,7 +30,7 @@ Notes on the GNU Make program.
 * **all** - the standard first **target** in many Makefiles
 * **automatic variables** - a set of built-in variables that provide access to the **target** and **prerequisites** without having to provide literal filenames.  Examples include **$@**, **$^**, etc.
 * **built-in rules** - are **pattern rules** and are like normal rules except the **stem** of the file (the non-suffix part) are represented by **%**.  They include **%.c** for C files, **%.o**for object files and **%** by itself for stem files (executable).  The percent sign functions much like the shell's **\*** asterisk as a wildcard match
-* **implicit rules** - are **pattern or suffix rules** found in the **rules database** that handle many common task such as compiling and linking to object files or executables with default behaviors that can be changed through changing the associated built-in variables (**CC**, **CFLAGS**, etc).  They make building make files easier by not having to explicitly specify commands and parameters.
+* **implicit rules** - are **pattern or suffix rules** found in the **rules database** that handle many common task such as compiling and linking to object files or executable with default behaviors that can be changed through changing the associated built-in variables (**CC**, **CFLAGS**, etc).  They make building make files easier by not having to explicitly specify commands and parameters.
 * **.PHONY** - used to tell make that the **target** is not a file.  The **clean** target is a typical example.  You don't want this interpreted being a file named **clean**, so to prevent this you define clean as a **.PHONY** target".  
 * **predefined variables** - those variables defined or used in the **rules database** that are used by **built-in** and **implicit** rules.  They include **CC**, **CFLAGS**, **COMPILE.c**, **LINK.c**, **LINK.o**, **RM**, **LOADLIBES**, **LDLIBS**, **OUTPUT_OPTION**, etc
 * **rules database** - access with **make -p** contains **variables** (including **automatic variables**),  **implicit rules**, **file types** (\*.c, \*.o, etc) and their associated **built-in rules**
@@ -51,7 +51,7 @@ hello: hello.c
 ```
 Compiles directly to the 'hello' executable without any intermediate *.o object files.
 
-**Important Note:** - gnu make requires a **tab** to be used for the indentation of the **command** (gcc here).  Anything proceeded by a **tab** will be interpretted by make as a **command**, so don't use **tabs** for anything other than commands and comments.  The **tab** character is what tells make it is a command, anything that follows is sent to the shell, including comments.
+**Important Note:** - gnu make requires a **tab** to be used for the indentation of the **command** (gcc here).  Anything proceeded by a **tab** will be interpreted by make as a **command**, so don't use **tabs** for anything other than commands and comments.  The **tab** character is what tells make it is a command, anything that follows is sent to the shell, including comments.
 
 Note that **#** is used to start a **comment**.  This is the same as in shell scripts, which is why comments can be sent to the shell without causing an issue.
 
@@ -93,23 +93,23 @@ languages.o: languages.c
         gcc -c languages.c
 
 ```
-When the hello.o and languages.o are evaluated for the **hello:** target, the **rules** associated with them are then evaluated and run first.  If these had any further dependencies they would be evaluated and run first, creating the **chain** of dependencies.  Notice that the ordering is the opposite of the order you would follow buiding each step manually, with the most general (the ultimate result) appearing first, working its way down the file to the more specific components.
+When the hello.o and languages.o are evaluated for the **hello:** target, the **rules** associated with them are then evaluated and run first.  If these had any further dependencies they would be evaluated and run first, creating the **chain** of dependencies.  Notice that the ordering is the opposite of the order you would follow building each step manually, with the most general (the ultimate result) appearing first, working its way down the file to the more specific components.
 
-# Wildcard Exampansion
+# Wildcard Expansion
 
-Make supports the Bourne shell wildcards
+Make supports the Bourne shell wildcard characters
 
-* **\*** (astericks) - match all for shell commands
-* **\%** (percent) - match all - roughly equivellent to shell`s asterisk
+* **\*** (asterisks) - match all for shell commands
+* **\%** (percent) - match all - roughly equivalent to shell`s asterisk
 * **\?** (question) - match a single character
 * **\~** (tilde) - expand to user's home directory
 * **\^** (caret) - negate the pattern
 
-Note that wildcard expansion is done by make itself when it applies to the **target** or **prerequisite** lines, where as wildcards on the **command** lines are interpretted by the shell.
+Note that wildcard expansion is done by make itself when it applies to the **target** or **prerequisite** lines, where as wildcard characters on the **command** lines are interpreted by the shell.
 
 # Variables
 
-* **\$\(varname\)** - specifies that variable to be expanded, whatever is in the variable will be expanded to include everything it  contains.  Curly brackets can also be used **\$\{varname\}**.  For a single character variable, the parenthesis and brackedts can be excluded.
+* **\$\(varname\)** - specifies that variable to be expanded, whatever is in the variable will be expanded to include everything it  contains.  Curly brackets can also be used **\$\{varname\}**.  For a single character variable, the parenthesis and brackets can be excluded.
 
 ## Automatic Variables
 * **\@** (at sign) - the target filename
@@ -170,7 +170,7 @@ syntax: vpath \<pattern\> \<directory\>
 vpath %.c src
 vpath %.h include
 ```
-Tells make to look in src for c files, and inlclude for header files
+Tells make to look in src for c files, and include for header files
 
 # Built-In Pattern Rules
 
@@ -401,7 +401,7 @@ gcc -gdwarf -Wall math_example.c ../../commonlib/common.h  ../../commonlib/commo
 
 This does the same thing as the prior example, it also includes the mathlib flag **-lm**, but in addition it also has a separate object file target generation, i.e. a two step compilation process.
 
-Notice the use of the **%:**, **%.c**, and **%.o** wildcards.  Even though the **$(OBJ)** variable is not directly used it needs to be defined with the object files to be generated, it uses this in the **all:** step to specify the **%.o** target needs to be run.  Note the order is important, it needs to come in front of the **$(EXE)** in the **all:** rule.
+Notice the use of the **%:**, **%.c**, and **%.o** wildcard characters.  Even though the **$(OBJ)** variable is not directly used it needs to be defined with the object files to be generated, it uses this in the **all:** step to specify the **%.o** target needs to be run.  Note the order is important, it needs to come in front of the **$(EXE)** in the **all:** rule.
 
 This example only uses one executable and object file, but it works equally well when additional executables and their associated object files are included.
 
