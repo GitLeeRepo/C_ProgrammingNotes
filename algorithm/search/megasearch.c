@@ -191,7 +191,7 @@ char *stripTrailingNewline(char *str) {
 // get input type, either from file or randomly generated 
 int getInputType() {
     int readFromFile = 1; // default to true
-    char ch;
+    int ch = '\0';
 
     while (ch != 'f' && ch != 'g') {
         printf("Read array from f)ile or g)enerate or q)uit (f/g/q): ");
@@ -199,9 +199,9 @@ int getInputType() {
         if (ch == 'q')
             exit (1);
         readFromFile = (ch == 'g' ? 0 : 1);
-        printf("\n");
+        getchar();  // remove newline from the buffer
     }
-    getchar();  // remove newline from the buffer
+    printf("\n");
     return readFromFile;
 }
 
@@ -212,7 +212,6 @@ unsigned long getNumOfElements(unsigned long defaultNumElements) {
 
     printf("Enter the number of elements for the array (or press Enter to accept default: %lu (%e)):",
                                                         defaultNumElements, (double) defaultNumElements);
-    fflush(stdin);
 
     if (fgets(inputStr, 80, stdin) == NULL)
         die("Invalid input, exiting");

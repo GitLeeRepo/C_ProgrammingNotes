@@ -14,7 +14,7 @@ Notes on the GNU Make program.
 
 * [C_ProgrammingNotes](https://github.com/GitLeeRepo/C_ProgrammingNotes/blob/master/C_ProgrammingNotes.md#overview)
 
-# Terminology and Concpts
+# Terminology and Concepts
 
 ## Rules
 
@@ -129,7 +129,7 @@ Examples:
 hello: hello.o languages.o
         gcc $^ -o $@
         
-# Includes the first prerequite 
+# Includes the first prerequisite 
 hello: hello.o 
         gcc -c $<
 ```
@@ -258,14 +258,15 @@ Note that these predefined Implicit Rules make the creation of the actual make f
 
 # .PHONY
 
-* **.PHONY**  is used to tell make that the **target** is not a file.  The **clean** target is a typical example.  You don't want this interpreted being a file named **clean**, so to prevent this you define clean as a **.PHONY** target".  Phony targets can be used to provide a series of shell commands, such as moving and copying files, or to print informative/help messages.  Phony targets are evaluated before other targets, so in the case of a **clean** phony target it would delete all the \*.o files before the compile is run. In addition, phony targets almost alway execute, because the commands that execute are not directly tied to the target name. Example syntax:
+* **.PHONY**  is used to tell make that the **target** is not a file.  The **clean** target is a typical example.  You don't want this interpreted being a file named **clean**, so to prevent this you define clean as a **.PHONY** target".  Phony targets can be used to provide a series of shell commands, such as moving and copying files, or to print informative/help messages.  Phony targets are evaluated before other targets, so in the case of a **clean** phony target it would delete all the \*.o files before the compile is run. In addition, phony targets almost always execute, because the commands that execute are not directly tied to the target name. Example syntax:
 
 ```make
 .PHONY: clean finale
 ```
-Note: finale was added here as an example of having two phony targets, to show they are delimeted by spaces.
+Note: finale was added here as an example of having two phony targets, to show they are delimited by spaces.
 
-# Assigning Variable from Make Commandline
+# Assigning Variable from Make Command line
+
 
 You can optionally assign variables on the make command line for example, **make CARG=-DDEBUG**, which can then be used within the make file itself.
 
@@ -351,7 +352,7 @@ gcc -gdwarf -Wall tcp_socket_clnt.c ../commonlib/common.h socket.h  ../commonlib
 
 ## Including a GCC Library (mathlib)
 
-This one includes the math.h related mathlib by using the **-lm** switch.  This required more specific rules defined in this make, than in the prior example which relied almost entirely on default behaviors. This one specifies more explict rules such as **$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) $(OUTPUT_OPTION)** so that the **OUTPUT_OPTION** on the end could include the **-lm** flag (it doesn't work by including it in the CFLAGS or LDFLAGS).
+This one includes the math.h related mathlib by using the **-lm** switch.  This required more specific rules defined in this make, than in the prior example which relied almost entirely on default behaviors. This one specifies more explicit rules such as **$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) $(OUTPUT_OPTION)** so that the **OUTPUT_OPTION** on the end could include the **-lm** flag (it doesn't work by including it in the CFLAGS or LDFLAGS).
 
 Note the use of the **%:** wildcard for the target instead of my usual **$(EXE):** target.  This was necessary so I could use the **%.c** prerequisite needed by the **LINK.c** variable.  Even though the **$(EXE)** is not explicitly used here as the target it is still related, notice the **all:** specifies it which provides a reference to the **%:** target label.
 
@@ -449,7 +450,7 @@ gcc -gdwarf -Wall -c math_example.c -o math_example.o
 gcc -gdwarf -Wall math_example.o ../../commonlib/common.h  ../../commonlib/common.o -o math_example -lm
 ```
 
-## Using both nasm and c and creating an iso file
+## Using both nasm and c and creating an ISO file
 
 ```make
 CC=gcc

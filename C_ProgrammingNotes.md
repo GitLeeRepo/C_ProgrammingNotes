@@ -6,7 +6,7 @@ This repository also contain information on the [gcc compiler](https://github.co
 
 # References
 
-* [Datat Type Limits](https://en.wikibooks.org/wiki/C_Programming/limits.h)
+* [Data Type Limits](https://en.wikibooks.org/wiki/C_Programming/limits.h)
 
 
 ## My Other Notes
@@ -28,7 +28,7 @@ This repository also contain information on the [gcc compiler](https://github.co
 * [GNU Coding Standards](https://www.gnu.org/prep/standards/standards.html)
 
 
-# Fundemental Data Types
+# Fundamental Data Types
 
 * **char** / **unsigned char** - 1 byte/8 bits on 32/64 bit Linux
 * **short** / **unsigned short** -  2 bytes/16 bits on 32/64 bit Linux
@@ -47,7 +47,7 @@ This repository also contain information on the [gcc compiler](https://github.co
 
 ## Data Type Limits
 
-* [Datat Type Limits](https://en.wikibooks.org/wiki/C_Programming/limits.h)
+* [Data Type Limits](https://en.wikibooks.org/wiki/C_Programming/limits.h)
 
 ## Type Conversions
 
@@ -148,7 +148,7 @@ For the most part you can treat a string defined with character array notation *
 * **printf("fmtstr, arg1,...)** - print a formatted string to standard output
 * **puts(str)** - print an unformatted string to standard output
 * **scanf("fmtstr", arg1,...)** - get a format string (word(s)) from standard input
-* **sprintf(dest, fmtstr, arg1,...)** - write a formated string to a memory location (destination string)
+* **sprintf(dest, fmtstr, arg1,...)** - write a formatted string to a memory location (destination string)
 * **strcat(str1, str2)** - string concatenation
 * **strchr(str, char)** - returns a pointer to the first location of char in str
 * **strcmp(str1, str2)** - compare two strings (returns 0 if equal, positive if str1 is greater, negative if str1 is less)
@@ -210,7 +210,7 @@ scanf(" %c", &ch);  // get the char you want, and discard the newline
 
 ## Character Output
 
-TODO - Placehollder
+TODO - Placeholder
 
 ## String Standard Input Functions
 
@@ -267,7 +267,7 @@ TODO - Placehollder
 
 * **printf()** - write a **formatted** string to standard output, it does not append a newline, so it must be explicitly added if one is needed.  It does not flush its output until the output buffer is full, a newline is encountered, or an input function such as **scanf()** is encountered.  You can force it to flush its output with the **fflush()** function.  **printf()** has the format of **printf(formatStr, arg1, ...)**, for example, **printf("Hello %s\n", name);**.  Refer to the following **Printf Format Strings** section for details.
 
-## Printf Format Strings
+## printf Format Strings
 
 Format   | Examples                 | Description                               | Footnotes
 ---------|--------------------------|-------------------------------------------|-----------
@@ -293,7 +293,7 @@ s        | "%s - %10s - %-10s       | print a character string                  
 
 1. Number proceeding the type placeholder specifies the output length
 2. Leading zero as in "%05d" or %09lu" will print leading zeros
-3. For floats the decimal number preceeding the type specifies how many digits before and after the decimal point
+3. For floats the decimal number proceeding the type specifies how many digits before and after the decimal point
 4. the x/X prints the number as an exponent.  The lower case 'x' prints a lower case letter 'x' in the hex number, and an upper case 'X' prints and uppercase letter 'X' in the hex number.
 5. the g/G types will either print as a decimal number or as an exponent depending on the size.  The lower case 'g' prints a lower case letter 'e' in the exponent, and an upper case 'G' prints and uppercase letter 'E' in the exponent.
 6. the e/E prints the number as an exponent.  The lower case 'e' prints a lower case letter 'e' in the exponent, and an upper case 'E' prints and uppercase letter 'E' in the exponent.
@@ -535,11 +535,11 @@ Refer also to: * [LinuxSysProgNotes](https://github.com/GitLeeRepo/LinuxSysProgN
 
 TODO - Placeholder
 
-# Mutliple Modules
+# Multiple Modules
 
 TODO - Placeholder
 
-# Processing Command Line Arguements in C
+# Processing Command Line Arguments in C
 
 Reference: [Cmdline Args - Caltech](http://courses.cms.caltech.edu/cs11/material/c/mike/misc/cmdline_args.html)
 
@@ -555,7 +555,7 @@ Reference: [Cmdline Args - Caltech](http://courses.cms.caltech.edu/cs11/material
 
 ## Debugging using a Symbol Defined During Compilation
 
-You can optionally assign variables on the make command line for example, **make CARG=-DDEBUG**, which can then be used within the make file itself, and passed onto the gcc compiler.  Ths can also be done directly on the command line with **gcc**, without using make.
+You can optionally assign variables on the make command line for example, **make CARG=-DDEBUG**, which can then be used within the make file itself, and passed onto the gcc compiler.  This can also be done directly on the command line with **gcc**, without using make.
 
 ## Passing Debug Flag Example
 

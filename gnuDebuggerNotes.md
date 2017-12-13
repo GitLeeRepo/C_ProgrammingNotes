@@ -46,7 +46,7 @@ The single letter qualifiers used for the display commands above can also be use
 * **x/xw &varname** - word size content at the specified address (&varname) in hexadecimal
 * **x/s &strname** - the null terminated string at the specified address (&strname)
 * **x/20i $pc** - - display instructions starting at the program counter (i.e. current location in code)
-* **x/20w &varname** - dispaly 20 word size values beginning at the address of varname
+* **x/20w &varname** - display 20 word size values beginning at the address of varname
 
 ## Examine Registers
 
@@ -83,7 +83,7 @@ Note: pressing **Enter** repeats the last command, so entering **list** followed
 
 * **b 18** - (**break**) set break point on line 18
 * **cl 18** - (**clear**) break point on line 18
-* **i b** - (**info break**) dieplays list of break points and watches
+* **i b** - (**info break**) displays list of break points and watches
 
 ## Running and Stepping through code
 

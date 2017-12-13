@@ -56,7 +56,7 @@ multi2.c
 badmergesort.c
 
 # Data files
-megasearch.dat
+*.dat
 *.bak
 
 # Executables
