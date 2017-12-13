@@ -139,6 +139,79 @@ For the most part you can treat a string defined with character array notation *
    strcpy(str2, "Test Pointer");
 ```
 
+## String Functions
+
+* **fgets(str, size, fileStream)** - get string from a FILE \*stream
+* **fprintf(fileStream, fmtstr, arg1,...)** - get formatted string from a FILE \*stream
+* **fputs(str, fileStream)** - write a string to a FILE \*stream
+* **gets(str)** - get a string from standard input
+* **printf("fmtstr, arg1,...)** - print a formatted string to standard output
+* **puts(str)** - print an unformatted string to standard output
+* **scanf("fmtstr", arg1,...)** - get a format string (word(s)) from standard input
+* **sprintf(dest, fmtstr, arg1,...)** - write a formated string to a memory location (destination string)
+* **strcat(str1, str2)** - string concatenation
+* **strchr(str, char)** - returns a pointer to the first location of char in str
+* **strcmp(str1, str2)** - compare two strings (returns 0 if equal, positive if str1 is greater, negative if str1 is less)
+* **strcpy(src, dest)** - copy destination string to source string (source needs to be big enough)
+* **strlen(str)** - string length
+* **strncmp(str1, str2, size)** - same as **strcmp()** but limits comparison to the number of size characters
+* **strncpy(src, dest, size)**  - copy destination string to source string using the specified size
+* **strstr(str1, str2)** - returns a pointer to the first location where str2 occurs in str1
+
+# Operators and Expressions
+
+TODO - Placeholder
+
+# Control Statements
+
+TODO - Placeholder
+
+# Input and Output
+
+TODO - Placeholder
+
+## Character input
+
+**Using getchar()** and **getc()**
+
+**getchar()** reads a character from **stdin**, while **getc()** reads from any input stream.  **getchar()** is equivellent to **getc(stdin)**.
+
+```c
+int c;
+
+c = getchar();
+while (c != EOF) {
+    putchar(c);
+    c = getchar();
+}
+```
+Note the use of **int** rather than **char** for defining that character, because **getchar()** itself is defined to return an **int**. One of the reasons for this is so the **EOF** character can be read reliably, since the standards define it as being a non-specific negative number.  While **-1** will work for a char, **-255** will not.  This applices to both **getchar()** and **getc()**
+
+### getchar() and scanf("%c", &ch) Dangling Newline
+
+By default both **getchar()** and **scanf()** use **buffered input** that is terminated when a newline is entered, i.e., you enter a character followed by Enter.  This gets your character, but leaves the newline in the input buffer, which will cause an issue if you have another character input which follows, since it will read the newline and proceed without getting the input you intended.
+
+There are a few ways to deal with this.  With both **scanf()** and **getchar** you can follow the call with another **getchar()** to remove the newline.
+
+```c
+ch = getchar();  // get the char you want
+getchar(); // discard the newline
+
+scanf("%c", &ch);  // get the char you want
+getchar(); // discard the new line
+```
+
+
+For **scanf()** you can also proceed the format character with a space, which will discard any whitespaces, including newlines.
+
+```c
+scanf(" %c", &ch);  // get the char you want, and discard the newline
+```
+
+## Character Output
+
+TODO - Placehollder
+
 ## String Standard Input Functions
 
 * **scanf()** - in general it is used to read a single word at a time from standard input, with each **%s** in the format string reading up to the first newline.
@@ -368,82 +441,7 @@ strings 1 & 2  ("%20s  %s"):        Hello, World!  How goes things?
 strings 1 & 2 ("%-20s  %s"): Hello, World!         How goes things?
 ```
 
-## String Functions
-
-* **fgets(str, size, fileStream)** - get string from a FILE \*stream
-* **fprintf(fileStream, fmtstr, arg1,...)** - get formatted string from a FILE \*stream
-* **fputs(str, fileStream)** - write a string to a FILE \*stream
-* **gets(str)** - get a string from standard input
-* **printf("fmtstr, arg1,...)** - print a formatted string to standard output
-* **puts(str)** - print an unformatted string to standard output
-* **scanf("fmtstr", arg1,...)** - get a format string (word(s)) from standard input
-* **sprintf(dest, fmtstr, arg1,...)** - write a formated string to a memory location (destination string)
-* **strcat(str1, str2)** - string concatenation
-* **strchr(str, char)** - returns a pointer to the first location of char in str
-* **strcmp(str1, str2)** - compare two strings (returns 0 if equal, positive if str1 is greater, negative if str1 is less)
-* **strcpy(src, dest)** - copy destination string to source string (source needs to be big enough)
-* **strlen(str)** - string length
-* **strncmp(str1, str2, size)** - same as **strcmp()** but limits comparison to the number of size characters
-* **strncpy(src, dest, size)**  - copy destination string to source string using the specified size
-* **strstr(str1, str2)** - returns a pointer to the first location where str2 occurs in str1
-
-# Operators and Expressions
-
-TODO - Placeholder
-
-# Control Statements
-
-TODO - Placeholder
-
-# Input and Output
-
-TODO - Placeholder
-
-## Character Input and Output
-
-### Character input
-
-**Using getchar()** and **getc()**
-
-**getchar()** reads a character from **stdin**, while **getc()** reads from any input stream.  **getchar()** is equivellent to **getc(stdin)**.
-
-```c
-int c;
-
-c = getchar();
-while (c != EOF) {
-    putchar(c);
-    c = getchar();
-}
-```
-Note the use of **int** rather than **char** for defining that character, because **getchar()** itself is defined to return an **int**. One of the reasons for this is so the **EOF** character can be read reliably, since the standards define it as being a non-specific negative number.  While **-1** will work for a char, **-255** will not.  This applices to both **getchar()** and **getc()**
-
-### getchar() and scanf("%c", &ch) Dangling Newline
-
-By default both **getchar()** and **scanf()** use **buffered input** that is terminated when a newline is entered, i.e., you enter a character followed by Enter.  This gets your character, but leaves the newline in the input buffer, which will cause an issue if you have another character input which follows, since it will read the newline and proceed without getting the input you intended.
-
-There are a few ways to deal with this.  With both **scanf()** and **getchar** you can follow the call with another **getchar()** to remove the newline.
-
-```c
-ch = getchar();  // get the char you want
-getchar(); // discard the newline
-
-scanf("%c", &ch);  // get the char you want
-getchar(); // discard the new line
-```
-
-
-For **scanf()** you can also proceed the format character with a space, which will discard any whitespaces, including newlines.
-
-```c
-scanf(" %c", &ch);  // get the char you want, and discard the newline
-```
-
-## String and Text Input and Output
-
-TODO - Placeholder
-
-### Input Validation
+## Input Validation
 
 TODO - Placeholder
 
