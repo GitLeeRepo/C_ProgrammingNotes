@@ -19,7 +19,7 @@ Notes on various data structures as implemented in the C programming language
 ```c
 // singlelink.c
 //
-// Demonstrate a simple singley linked list
+// Demonstrate a simple single linked list
 
 #include <stdio.h>
 #include <stdlib.h>

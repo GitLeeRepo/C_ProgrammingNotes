@@ -92,7 +92,7 @@ Note: pressing **Enter** repeats the last command, so entering **list** followed
 * **s optcount** - (**step**) run one line of code.  Step **into** function, or **over** the code if not a function on the current line
 * **n optcount** - (**next**) run one line of code.  Step **over** a function or any other line of code
 * **c** - (**continue**) - continue running code from the current line
-* **en** - (**enbable**) break points
+* **en** - (**enable**) break points
 * **dis** - (**disable**) break points
 
 Note: since **Enter** repeats the last command you can continue to **step** through the program by just pressing **Enter** on a blank line after the original **step** has been executed.

@@ -403,7 +403,7 @@ pointer to unsigned long 1: 0x7ffd09f44380 (six byte address)
 **Output:**
 
 ```bash
-Float Formats (col 1 num assiged width, col 2 extra width):
+Float Formats (col 1 num assigned width, col 2 extra width):
     float 1:              12345.6787;           12345.6787109375
    double 1:    123456789.0123456717;   123456789.01234567165375
    double 2:       0.000000123456789;     0.00000012345678900000
