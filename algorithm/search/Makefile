@@ -11,7 +11,7 @@ COMMON_DIR = ../../commonlib
 COMMON_LIB = $(COMMON_DIR)/common.o
 COMMON_INCL = $(COMMON_DIR)/common.h
 
-EXE = linearsearch megasearch
+EXE = linearsearch megasearch binarysearch
 INCFILES = $(COMMON_INCL)
 LDLIBS = $(COMMON_LIB)
 CC=gcc

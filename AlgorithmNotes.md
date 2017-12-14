@@ -22,7 +22,7 @@ Notes and various algorithms as implemented in the C programming language
 
 From: [tutorialspoint - Asymptotic Analysis](https://www.tutorialspoint.com/data_structures_algorithms/asymptotic_analysis.htm)
 
-**Important Note:** the information in this section is quoting directly from [tutorialspoint - Asymptotic Analysis](https://www.tutorialspoint.com/data_structures_algorithms/asymptotic_analysis.htm).  Please refer to this site for more details, incuding graphs.
+**Important Note:** the information in this section is quoting directly from [tutorialspoint - Asymptotic Analysis](https://www.tutorialspoint.com/data_structures_algorithms/asymptotic_analysis.htm).  Please refer to this site for more details, including graphs.
 
 Asymptotic analysis refers to computing the running time of any operation in mathematical units of computation. For example, the running time of one operation is computed as f(n) and may be for another operation it is computed as g(n2). This means the first operation running time will increase linearly with the increase in n and the running time of the second operation will increase exponentially when n increases. Similarly, the running time of both operations will be nearly the same if n is significantly small.
 
