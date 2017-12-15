@@ -291,9 +291,9 @@ e, E     | "%9e - %9E"              | print float/double in exponential format  
 c        | "%c - %5c"               | print a single character                  | 1, 7
 s        | "%s - %10s - %-10s       | print a character string                  | 1, 8
 
-1. Number proceeding the type placeholder specifies the output length
+1. Number preceding the type placeholder specifies the output length
 2. Leading zero as in "%05d" or %09lu" will print leading zeros
-3. For floats the decimal number proceeding the type specifies how many digits before and after the decimal point
+3. For floats the decimal number preceding the type specifies how many digits before and after the decimal point
 4. the x/X prints the number as an exponent.  The lower case 'x' prints a lower case letter 'x' in the hex number, and an upper case 'X' prints and uppercase letter 'X' in the hex number.
 5. the g/G types will either print as a decimal number or as an exponent depending on the size.  The lower case 'g' prints a lower case letter 'e' in the exponent, and an upper case 'G' prints and uppercase letter 'E' in the exponent.
 6. the e/E prints the number as an exponent.  The lower case 'e' prints a lower case letter 'e' in the exponent, and an upper case 'E' prints and uppercase letter 'E' in the exponent.
@@ -465,7 +465,7 @@ TODO - Placeholder
 
 TODO - Placeholder
 
-# Enums
+# Enumerations
 
 TODO - Placeholder
 
