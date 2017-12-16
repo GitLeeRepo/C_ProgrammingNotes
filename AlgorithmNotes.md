@@ -14,6 +14,7 @@ Notes and various algorithms as implemented in the C programming language
 # YouTube Videos
 
 * [Algorithms Illuminated Series](https://www.youtube.com/watch?v=yRM3sc57q0c&list=PLXFMmlk03Dt7Q0xr1PIAriY5623cKiH7V&t=41s&index=1) - Corresponds to the Algorithms Illuminated books series.
+* [Big O Notation](https://www.youtube.com/watch?v=V6mKVRU1evU)
 
 # Concepts and Terminology
 
@@ -67,5 +68,22 @@ linear       | Ο(n)
 n log n      | Ο(n log n)
 quadratic    | Ο(n2)
 cubic        | Ο(n3)
+polynomial   | nΟ(1)
+exponential  | 2Ο(n)
+
+# Big O Examples
+
+## constant Ο(1)
+
+## linear Ο(n)
+
+## logarithmic Ο(log n)
+
+## n log n Ο(n log n)
+
+## quadratic Ο(n2)
+
+## cubic Ο(n3)
+
 polynomial   | nΟ(1)
 exponential  | 2Ο(n)
