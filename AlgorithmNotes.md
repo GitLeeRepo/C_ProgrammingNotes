@@ -14,7 +14,7 @@ Notes and various algorithms as implemented in the C programming language
 # YouTube Videos
 
 * [Algorithms Illuminated Series](https://www.youtube.com/watch?v=yRM3sc57q0c&list=PLXFMmlk03Dt7Q0xr1PIAriY5623cKiH7V&t=41s&index=1) - Corresponds to the Algorithms Illuminated books series.
-* [Big O Notation](https://www.youtube.com/watch?v=V6mKVRU1evU)
+* [Big O Notation](https://www.youtube.com/watch?v=V6mKVRU1evU) - by Derek Banas
 
 # Concepts and Terminology
 
@@ -66,8 +66,8 @@ constant     | Ο(1)
 logarithmic  | Ο(log n)
 linear       | Ο(n)
 n log n      | Ο(n log n)
-quadratic    | Ο(n2)
-cubic        | Ο(n3)
+quadratic    | Ο(n^2)
+cubic        | Ο(n^3)
 polynomial   | nΟ(1)
 exponential  | 2Ο(n)
 
@@ -75,15 +75,23 @@ exponential  | 2Ο(n)
 
 ## constant Ο(1)
 
+Takes the same amount of time, regardless of the number of elements.  Updating a **specific array element** is an example of **constant time**.
+
 ## linear Ο(n)
+
+Increases in **n** have a linear increase in time.  The **linear search** is an example of **linear time**
+
+## quadratic Ο(n^2)
+
+Increases in **n** increase exponentially (quadraticlly).  It has poor performance as **n** gets large and should be avoided.  The **bubble sort** is an example of **quadratic exponential time**
 
 ## logarithmic Ο(log n)
 
+Increases in **n** increase logarithmically, which means larger and larger values of **n** have smaller and smaller increases in time, making it useful for large sets of data.  The **binary search** is an example of **logarithmic time**
+
 ## n log n Ο(n log n)
 
-## quadratic Ο(n2)
-
-## cubic Ο(n3)
+## cubic Ο(n^3)
 
 polynomial   | nΟ(1)
 exponential  | 2Ο(n)
