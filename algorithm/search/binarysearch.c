@@ -30,6 +30,11 @@ int main(void) {
 
     printf("Input Array (%d elements): ", numOfElements);
     display();
+
+    printf("Enter search value: ");
+    scanf("%d", &searchValue);
+    printf("\n");
+
     printf("Search Value = %d\n", searchValue);
     printline(50);
 

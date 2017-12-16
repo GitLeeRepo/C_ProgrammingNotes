@@ -84,7 +84,7 @@ Increases in **n** have a linear increase in time.  The **linear search** is an 
 
 ## quadratic Ο(n^2)
 
-Increases in **n** increase exponentially (quadraticlly).  It has poor performance as **n** gets large and should be avoided.  The **bubble sort** is an example of **quadratic exponential time**
+Increases in **n** increase exponentially (quadratically).  It has poor performance as **n** gets large and should be avoided.  The **bubble sort** is an example of **quadratic exponential time**
 
 ## logarithmic Ο(log n)
 
