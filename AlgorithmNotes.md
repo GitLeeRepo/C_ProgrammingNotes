@@ -5,6 +5,7 @@ Notes and various algorithms as implemented in the C programming language
 # References
 
 * [Data Structures and Algorithms - tutorialspoint.com](https://www.tutorialspoint.com/data_structures_algorithms/index.htm)
+* [Big O Notation Cheat Sheet](http://bigocheatsheet.com/)
 
 # Books
 
@@ -87,11 +88,8 @@ Increases in **n** increase exponentially (quadraticlly).  It has poor performan
 
 ## logarithmic Ο(log n)
 
-Increases in **n** increase logarithmically, which means larger and larger values of **n** have smaller and smaller increases in time, making it useful for large sets of data.  The **binary search** is an example of **logarithmic time**
+Increases in **n** increase logarithmically, which means larger and larger values of **n** have smaller and smaller increases in time, making it useful for large sets of data.  The **binary search** is an example of **logarithmic time**, in which the amount of data is cut in half each time.
 
 ## n log n Ο(n log n)
 
-## cubic Ο(n^3)
-
-polynomial   | nΟ(1)
-exponential  | 2Ο(n)
+A factorial based 
