@@ -11,6 +11,7 @@ Notes on various data structures as implemented in the C programming language
 * **Data Structure** - a means of storing and organizing data in structured way that is optimal and useful for a given requirement.  They include files, arrays, linked lists, stacks, queues, dictionaries, hash tables, trees, graphs, etc.  There are two general types:
     * **Linear Data Structures** - the elements of the data structure are organized in a linear manner that are typically accessed sequentially. such as arrays, linked lists, stacks and queues
     * **Non-Linear Data Structures** - data elements are stored and accessed in a non-linear manner, the include trees and graphs.
+* **Node** - the node provides the basis of many data structures, such as linked lists.  It contains data and provides a means of connectin to other nodes through object data pointers (typical names for these pointers are Next, Prev, Head, Tail).
 
 # Examples
 
