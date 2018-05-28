@@ -46,7 +46,7 @@ The single letter qualifiers used for the display commands above can also be use
 * **x/xw &varname** - word size content at the specified address (&varname) in hexadecimal
 * **x/s &strname** - the null terminated string at the specified address (&strname)
 * **x/20i $pc** - - display instructions starting at the program counter (i.e. current location in code)
-* **x/20w &varname** - display 20 word size values beginning at the address of varname
+* **x/20w &varname** - dispaly 20 word size values beginning at the address of varname
 
 ## Examine Registers
 
@@ -75,7 +75,7 @@ When a watch is added, it will display the value of the watched variable/registe
 * **l 15** - (**list**) display 10 lines of source, starting at line 10 through 19 (5 before 15 and 5 including and after 15)
 * **l 1,20** - (**list**) display from line 1 through line 20
 * **whe** - (**where**) display the next line to be executed
-* **bt** - (**back trace**) show the current line of execution and what function you are in (current call stack frame).  If there are multiple nested calls it will show the call stacks of the calling procs that proceeded it.  To switch the context to one of the call frames higher in the call hierarchy in order to examine its local variables enter **frame #** with the number being the frame number listed when running **bt**.
+* **bt** - (**back trace**) show the current line of execution and what function you are in (current call stack frame).  If there are multiple nested calls it will show the call stacks of the calling procs that proceeded it.  To switch the context to one of the call frames higher in the call hierarch in order to examine its local variables enter **frame #** with the number being the frame number listed when running **bt**.
 
 Note: pressing **Enter** repeats the last command, so entering **list** followed by **Enter** on a blank line will list the next 10 lines of code.  This can be repeated until you reach the end of the program listing.
 
@@ -83,7 +83,7 @@ Note: pressing **Enter** repeats the last command, so entering **list** followed
 
 * **b 18** - (**break**) set break point on line 18
 * **cl 18** - (**clear**) break point on line 18
-* **i b** - (**info break**) displays list of break points and watches
+* **i b** - (**info break**) dieplays list of break points and watches
 
 ## Running and Stepping through code
 
@@ -92,7 +92,7 @@ Note: pressing **Enter** repeats the last command, so entering **list** followed
 * **s optcount** - (**step**) run one line of code.  Step **into** function, or **over** the code if not a function on the current line
 * **n optcount** - (**next**) run one line of code.  Step **over** a function or any other line of code
 * **c** - (**continue**) - continue running code from the current line
-* **en** - (**enable**) break points
+* **en** - (**enbable**) break points
 * **dis** - (**disable**) break points
 
 Note: since **Enter** repeats the last command you can continue to **step** through the program by just pressing **Enter** on a blank line after the original **step** has been executed.
