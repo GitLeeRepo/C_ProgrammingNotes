@@ -46,7 +46,7 @@ The single letter qualifiers used for the display commands above can also be use
 * **x/xw &varname** - word size content at the specified address (&varname) in hexadecimal
 * **x/s &strname** - the null terminated string at the specified address (&strname)
 * **x/20i $pc** - - display instructions starting at the program counter (i.e. current location in code)
-* **x/20w &varname** - dispaly 20 word size values beginning at the address of varname
+* **x/20w &varname** - display 20 word size values beginning at the address of varname
 
 ## Examine Registers
 
@@ -83,7 +83,7 @@ Note: pressing **Enter** repeats the last command, so entering **list** followed
 
 * **b 18** - (**break**) set break point on line 18
 * **cl 18** - (**clear**) break point on line 18
-* **i b** - (**info break**) dieplays list of break points and watches
+* **i b** - (**info break**) displays list of break points and watches
 
 ## Running and Stepping through code
 
@@ -92,7 +92,7 @@ Note: pressing **Enter** repeats the last command, so entering **list** followed
 * **s optcount** - (**step**) run one line of code.  Step **into** function, or **over** the code if not a function on the current line
 * **n optcount** - (**next**) run one line of code.  Step **over** a function or any other line of code
 * **c** - (**continue**) - continue running code from the current line
-* **en** - (**enbable**) break points
+* **en** - (**enable**) break points
 * **dis** - (**disable**) break points
 
 Note: since **Enter** repeats the last command you can continue to **step** through the program by just pressing **Enter** on a blank line after the original **step** has been executed.

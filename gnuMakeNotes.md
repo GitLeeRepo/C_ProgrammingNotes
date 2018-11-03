@@ -306,7 +306,7 @@ Refer to the comment included in the makefile below for details, and to the outp
 # multiple executables in same directory This relies on implicit variables 
 # and default actions to do the compile of the $(EXE) target. The implicit CC 
 # and CFLAGS are redefined here, while RM uses the default 'rm -f'. Only 
-# recompiles the specified files and header if they have changed since last 
+# re-compiles the specified files and header if they have changed since last 
 # compile
 
 # common library and include directory
